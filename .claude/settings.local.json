@@ -7,7 +7,10 @@
       "Bash(nvm use:*)",
       "Bash(npm install)",
       "Bash(npm run dev)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run build)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix deployment issues: Update Node.js version and ESLint config\n\n- Add Node.js engine requirement (>=18.17.0) to package.json\n- Create .nvmrc file to specify Node.js 18\n- Add vercel.json for Vercel deployment configuration  \n- Disable react/no-unescaped-entities ESLint rule to fix build errors\n\nThis resolves the deployment failure caused by incompatible Node.js version.\nNext.js 14 requires Node.js >= 18.17.0, but the project was using 14.16.1.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
