@@ -5,10 +5,6 @@ import {
   Target,
   Lightbulb,
   Heart,
-  Award,
-  Users,
-  Globe,
-  TrendingUp,
   Zap,
 } from "lucide-react";
 import BookDemoModal from "@/components/BookDemoModal";
@@ -16,12 +12,6 @@ import BookDemoModal from "@/components/BookDemoModal";
 export default function AboutPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const stats = [
-    { icon: Users, value: "10,000+", label: "Active Users" },
-    { icon: Globe, value: "50+", label: "Countries" },
-    { icon: TrendingUp, value: "5M+", label: "Calls Handled" },
-    { icon: Award, value: "99.9%", label: "Uptime" },
-  ];
 
   const values = [
     {
@@ -52,53 +42,13 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: "Sarah Chen",
-      role: "CEO & Co-founder",
-      bio: "Former VP of AI at Google. PhD in Machine Learning from Stanford.",
-      image: "SC",
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "CTO & Co-founder",
-      bio: "Ex-Amazon Alexa team. 15+ years in voice technology and NLP.",
-      image: "MR",
-    },
-    {
-      name: "Emily Watson",
-      role: "Head of Product",
-      bio: "Previously led product at Twilio. Passionate about customer experience.",
-      image: "EW",
-    },
-    {
-      name: "David Kim",
-      role: "Head of Engineering",
-      bio: "Built voice systems at Apple. MIT Computer Science graduate.",
-      image: "DK",
+      name: "Soham Amatya",
+      role: "Founder",
+      bio: "Built Orwexa from personal experience with cold calling and lead management. Director at Dohoot Technologies.",
+      image: "SA",
     },
   ];
 
-  const timeline = [
-    {
-      year: "2021",
-      title: "Founded",
-      description: "Orweza was born from a vision to make AI voice technology accessible to everyone.",
-    },
-    {
-      year: "2022",
-      title: "Series A",
-      description: "Raised $15M to build the best AI voice platform on the market.",
-    },
-    {
-      year: "2023",
-      title: "10K Customers",
-      description: "Reached a major milestone serving businesses across 50+ countries.",
-    },
-    {
-      year: "2024",
-      title: "Industry Leader",
-      description: "Named #1 AI Voice Platform by G2 and TrustRadius.",
-    },
-  ];
 
   return (
     <>
@@ -108,72 +58,55 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Building the Future of{" "}
-            <span className="text-gradient">Voice AI</span>
+            The story behind{" "}
+            <span className="text-gradient">Orwexa</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            We're on a mission to make every customer conversation exceptional through
-            intelligent, empathetic AI voice technology.
-          </p>
         </div>
       </section>
 
-      {/* Stats Section */}
+
+      {/* Founder Story Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={index}
-                  className="text-center p-6 bg-gradient-soft rounded-2xl hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-12 items-start">
+            {/* Left Column - Founder Image */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-32">
+                <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gray-800 border-4 border-gray-700">
+                  {/* Placeholder for Soham's image */}
+                  <div className="w-full h-full bg-gradient-primary flex items-center justify-center">
+                    <span className="text-white font-bold text-6xl">SA</span>
                   </div>
-                  <div className="text-4xl font-bold text-gradient mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-300 font-medium">{stat.label}</div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                <div className="mt-6 text-center">
+                  <h3 className="text-2xl font-bold text-white mb-2">Soham Amatya</h3>
+                  <p className="text-primary-400 font-semibold mb-1">Founder, Orwexa</p>
+                  <p className="text-gray-400 text-sm">Director, Dohoot Technologies</p>
+                </div>
+              </div>
+            </div>
 
-      {/* Story Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Our <span className="text-gradient">Story</span>
-            </h2>
-          </div>
-
-          <div className="rounded-3xl p-8 md:p-12 shadow-xl bg-gray-800 border border-gray-700">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Orweza was founded in 2021 by a team of AI researchers and entrepreneurs who
-                saw a fundamental problem: businesses were struggling to handle growing
-                call volumes while maintaining quality customer service.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                We believed AI could help, but existing solutions felt robotic and
-                frustrating. So we set out to build something different—voice agents that
-                sound natural, understand context, and actually solve problems.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Today, Orweza powers millions of conversations for thousands of businesses
-                worldwide. From small startups to Fortune 500 companies, our AI voice
-                agents help organizations deliver exceptional customer experiences at scale.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                We're just getting started. Our vision is a world where every business can
-                provide instant, intelligent, and empathetic service to every customer,
-                every time.
-              </p>
+            {/* Right Column - Story */}
+            <div className="lg:col-span-2">
+              <div className="rounded-3xl p-8 md:p-12 shadow-xl bg-gray-800 border border-gray-700">
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    Orwexa began from a problem I lived every night — staying up past midnight calling leads in the U.S., trying to win clients through sheer persistence.
+                  </p>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    Before Orwexa, I spent years running cold email campaigns, managing remote callers, and hiring teams in Nepal to work overnight shifts just to keep up with prospects. We'd land clients for digital services through Dohoot Technologies, but it was exhausting. Calls were missed, follow-ups forgotten, and energy wasted repeating the same pitch again and again.
+                  </p>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    That's where the idea for Orwexa came from — not theory, but survival. I wanted a way to automate what I was doing manually: the outreach, the follow-ups, the scheduling. So I built it.
+                  </p>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    Today, Orwexa gives freelancers, solopreneurs, and small businesses what I never had in those early nights — an AI voice agent that can answer calls, make calls, follow up, and book real clients automatically.
+                  </p>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    What started as a cold-calling hustle has grown into a voice platform built for anyone who lives by the phone — tradies, agents, service providers, and independent professionals who just want more time and more booked work.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -215,81 +148,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Our <span className="text-gradient">Journey</span>
-            </h2>
-          </div>
 
-          <div className="space-y-8">
-            {timeline.map((milestone, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-6 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-800 border border-gray-700"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {milestone.year}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {milestone.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Meet Our <span className="text-gradient">Leadership</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Experienced leaders passionate about AI and customer experience
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="text-center group hover:scale-105 transition-transform duration-300"
-              >
-                <div className="mb-6">
-                  <div className="w-32 h-32 bg-gradient-primary rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-shadow">
-                    <span className="text-white font-bold text-3xl">
-                      {member.image}
-                    </span>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">
-                  {member.name}
-                </h3>
-                <div className="text-primary-400 font-medium mb-3">
-                  {member.role}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">

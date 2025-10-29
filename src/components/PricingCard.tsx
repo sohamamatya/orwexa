@@ -5,6 +5,8 @@ interface PricingCardProps {
   title: string;
   price: string;
   period?: string;
+  callCost?: string;
+  billing?: string;
   description: string;
   features: string[];
   popular?: boolean;
@@ -16,6 +18,8 @@ export default function PricingCard({
   title,
   price,
   period = "/month",
+  callCost,
+  billing,
   description,
   features,
   popular = false,
@@ -45,12 +49,20 @@ export default function PricingCard({
       <div className="text-center mb-6">
         <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
         <p className="text-gray-400 text-sm mb-4">{description}</p>
-        <div className="flex items-baseline justify-center">
+        <div className="flex items-baseline justify-center mb-3">
           <span className="text-5xl font-bold text-white">{price}</span>
-          {price !== "Custom" && (
+          {price !== "Custom" && period && (
             <span className="text-gray-400 ml-2">{period}</span>
           )}
         </div>
+        {callCost && (
+          <div className="space-y-1">
+            <div className="text-primary-400 font-semibold">{callCost}</div>
+            {billing && (
+              <div className="text-sm text-gray-500">{billing}</div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Features */}

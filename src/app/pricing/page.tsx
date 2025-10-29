@@ -7,22 +7,27 @@ import BookDemoModal from "@/components/BookDemoModal";
 
 export default function PricingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
 
   const pricingPlans = [
     {
       title: "Starter",
-      price: billingCycle === "monthly" ? "$99" : "$79",
-      period: billingCycle === "monthly" ? "/month" : "/month",
+      price: "$29",
+      period: "/month",
+      callCost: "$0.39 / min",
+      billing: "Billed per 60 seconds",
       description: "Perfect for small businesses getting started with AI voice",
       features: [
-        "Up to 500 calls per month",
-        "1 AI voice agent",
-        "Basic voice customization",
+        "1 AI Voice Agent",
+        "1 User",
+        "Calendar booking",
+        "Real-time scheduling",
+        "Unlimited SMS & WhatsApp",
+        "Campaign Manager",
+        "Knowledge Base",
+        "Standard voices & accents (ElevenLabs)",
+        "Call recording & transcripts",
+        "Basic analytics",
         "Email support",
-        "Call recording & transcription",
-        "Basic analytics dashboard",
-        "CRM integration (3 platforms)",
       ],
       popular: false,
       cta: "Start Free Trial",
@@ -30,42 +35,47 @@ export default function PricingPage() {
     },
     {
       title: "Pro",
-      price: billingCycle === "monthly" ? "$299" : "$239",
-      period: billingCycle === "monthly" ? "/month" : "/month",
+      price: "$99",
+      period: "/month",
+      callCost: "$0.29 / min",
+      billing: "Billed per 60 seconds",
       description: "For growing businesses that need more power and flexibility",
       features: [
-        "Up to 2,000 calls per month",
-        "3 AI voice agents",
-        "Advanced voice customization",
-        "Priority support (24/7)",
-        "Advanced analytics & reporting",
-        "Custom conversation flows",
-        "All CRM integrations",
-        "API access",
-        "Multi-language support",
-        "Sentiment analysis",
+        "5 AI Agents",
+        "5 Users",
+        "Multi-calendar integration",
+        "Advanced campaigns",
+        "CRM & API integrations",
+        "Custom voices & accents",
+        "Batch outbound calls",
+        "Analytics & reports",
+        "Connect Twilio / Telynx",
+        "Unlimited SMS & WhatsApp",
+        "24/7 email + chat support",
       ],
       popular: true,
       cta: "Start Free Trial",
       ctaLink: "/contact",
     },
     {
-      title: "Enterprise",
-      price: "Custom",
-      period: "",
+      title: "Enterprise / Custom",
+      price: "$499",
+      period: "/month",
+      callCost: "$0.19 / min",
+      billing: "Billed per 60 seconds",
       description: "Tailored solutions for large organizations with unique needs",
       features: [
-        "Unlimited calls",
-        "Unlimited AI voice agents",
-        "Custom voice cloning",
+        "Unlimited AI Agents",
+        "Unlimited Users",
         "Dedicated account manager",
-        "Custom integrations",
-        "SLA guarantee (99.9% uptime)",
-        "Advanced security features",
-        "HIPAA compliance",
-        "White-label options",
-        "Custom AI training",
-        "On-premise deployment available",
+        "Multi-language voice options",
+        "Full onboarding & setup",
+        "Custom integrations (CRM, ERP, tools)",
+        "Priority routing & support",
+        "SLA 99.9% uptime",
+        "Advanced analytics & reports",
+        "Private hosting & compliance",
+        "Custom AI training & voice tuning",
       ],
       popular: false,
       cta: "Contact Sales",
@@ -80,14 +90,14 @@ export default function PricingPage() {
         "Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
     },
     {
-      question: "What happens if I exceed my call limit?",
+      question: "How does call billing work?",
       answer:
-        "We'll notify you when you're approaching your limit. You can either upgrade your plan or purchase additional call credits at $0.20 per call.",
+        "Calls are billed per 60 seconds based on your plan's per-minute rate. For example, on the Starter plan at $0.39/min, a 2-minute call would cost $0.78.",
     },
     {
       question: "Is there a free trial?",
       answer:
-        "Yes! We offer a 14-day free trial on all plans. No credit card required to start. You'll get full access to all features during the trial period.",
+        "Yes! We offer a 7-day free trial with $10 credit on all plans. No credit card required to start. You'll get full access to all features during the trial period.",
     },
     {
       question: "What payment methods do you accept?",
@@ -95,32 +105,14 @@ export default function PricingPage() {
         "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and ACH transfers for Enterprise customers.",
     },
     {
-      question: "Do you offer discounts for annual billing?",
+      question: "What's included in the monthly fee?",
       answer:
-        "Yes! Annual billing saves you 20% compared to monthly billing. You can switch between monthly and annual billing at any time.",
+        "The monthly fee covers platform access, your AI agents, users, and all features listed in your plan. Call costs are billed separately based on usage.",
     },
     {
       question: "Can I cancel anytime?",
       answer:
         "Absolutely. There are no long-term contracts (except for custom Enterprise agreements). You can cancel your subscription at any time from your account settings.",
-    },
-  ];
-
-  const addOns = [
-    {
-      title: "Additional Calls",
-      price: "$50",
-      description: "1,000 extra calls per month",
-    },
-    {
-      title: "Custom Voice Clone",
-      price: "$199",
-      description: "One-time fee for voice cloning",
-    },
-    {
-      title: "Premium Support",
-      price: "$99",
-      description: "Dedicated support channel",
     },
   ];
 
@@ -140,41 +132,9 @@ export default function PricingPage() {
             Choose the <span className="text-gradient">Perfect Plan</span> for Your
             Business
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Start with a 14-day free trial. No credit card required. Cancel anytime.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Start with a 7-day free trial + $10 credit. No credit card required.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mb-12">
-            <span
-              className={`text-lg font-medium ${
-                billingCycle === "monthly" ? "text-white" : "text-gray-300"
-              }`}
-            >
-              Monthly
-            </span>
-            <button
-              onClick={() =>
-                setBillingCycle(billingCycle === "monthly" ? "annual" : "monthly")
-              }
-              className="relative w-16 h-8 bg-gradient-primary rounded-full transition-all duration-300"
-            >
-              <div
-                className={`absolute top-1 left-1 w-6 h-6 rounded-full transition-transform duration-300 ${
-                  billingCycle === "annual" ? "translate-x-8" : ""
-                }`}
-                style={{backgroundColor: '#524f4f'}}
-              ></div>
-            </button>
-            <span
-              className={`text-lg font-medium ${
-                billingCycle === "annual" ? "text-white" : "text-gray-300"
-              }`}
-            >
-              Annual{" "}
-              <span className="text-green-600 text-sm">(Save 20%)</span>
-            </span>
-          </div>
         </div>
       </section>
 
@@ -189,33 +149,46 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Add-ons */}
+      {/* Pricing Summary Table */}
       <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Optional <span className="text-gradient">Add-ons</span>
+              Pricing <span className="text-gradient">Summary</span>
             </h2>
-            <p className="text-xl text-gray-300">
-              Enhance your plan with additional features
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {addOns.map((addon, index) => (
-              <div
-                key={index}
-                className="rounded-2xl p-6 shadow-lg border-2 border-gray-700 hover:border-primary-300 transition-all duration-200 bg-gray-800"
-              >
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {addon.title}
-                </h3>
-                <div className="text-3xl font-bold text-gradient mb-3">
-                  {addon.price}
-                </div>
-                <p className="text-gray-300">{addon.description}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full bg-gray-800 rounded-2xl border border-gray-700">
+              <thead>
+                <tr className="border-b-2 border-gray-600">
+                  <th className="text-left py-4 px-6 font-semibold text-white">Plan</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Monthly Fee</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Call Cost</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Billing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-700">
+                  <td className="py-4 px-6 text-white font-medium">Starter</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$29 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.39 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+                <tr className="border-b border-gray-700 bg-primary-500/10">
+                  <td className="py-4 px-6 text-white font-medium">Pro</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$99 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.29 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-white font-medium">Enterprise</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$499 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.19 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -249,16 +222,17 @@ export default function PricingPage() {
               </thead>
               <tbody>
                 {[
-                  { feature: "Monthly Calls", starter: "500", pro: "2,000", enterprise: "Unlimited" },
-                  { feature: "AI Voice Agents", starter: "1", pro: "3", enterprise: "Unlimited" },
-                  { feature: "Voice Customization", starter: true, pro: true, enterprise: true },
-                  { feature: "Call Recording", starter: true, pro: true, enterprise: true },
-                  { feature: "Analytics Dashboard", starter: true, pro: true, enterprise: true },
-                  { feature: "CRM Integration", starter: "3", pro: "All", enterprise: "Custom" },
-                  { feature: "API Access", starter: false, pro: true, enterprise: true },
-                  { feature: "24/7 Support", starter: false, pro: true, enterprise: true },
-                  { feature: "Custom AI Training", starter: false, pro: false, enterprise: true },
-                  { feature: "SLA Guarantee", starter: false, pro: false, enterprise: true },
+                  { feature: "AI Voice Agents", starter: "1", pro: "5", enterprise: "Unlimited" },
+                  { feature: "Users", starter: "1", pro: "5", enterprise: "Unlimited" },
+                  { feature: "Calendar Integration", starter: "Calendar booking", pro: "Multi-calendar", enterprise: "Multi-calendar & routing" },
+                  { feature: "Scheduling", starter: "Real-time scheduling", pro: "Real-time scheduling", enterprise: "Full onboarding & scheduling setup" },
+                  { feature: "Campaigns", starter: "Campaign Manager", pro: "Advanced Campaigns", enterprise: "Advanced Campaigns + Automation" },
+                  { feature: "CRM & Integrations", starter: "Basic CRM integration", pro: "CRM & API integrations", enterprise: "Custom integrations (CRM, ERP, tools)" },
+                  { feature: "Voice & Accents", starter: "Standard voices (ElevenLabs)", pro: "Custom voices & accents", enterprise: "Multi-language voice options" },
+                  { feature: "Analytics & Reporting", starter: "Basic analytics", pro: "Analytics & reports", enterprise: "Advanced analytics suite" },
+                  { feature: "Messaging", starter: "Unlimited SMS & WhatsApp", pro: "Unlimited SMS & WhatsApp", enterprise: "Unlimited SMS & WhatsApp" },
+                  { feature: "Support", starter: "Email support", pro: "24/7 email + chat support", enterprise: "Dedicated manager + priority support" },
+                  { feature: "Extras / Infrastructure", starter: "Call recording & transcripts", pro: "Connect Twilio / Telynx", enterprise: "SLA 99.9% uptime · Private hosting · Compliance" },
                 ].map((row, index) => (
                   <tr key={index} className="border-b border-gray-700">
                     <td className="py-4 px-4 text-gray-200">{row.feature}</td>
@@ -338,7 +312,7 @@ export default function PricingPage() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Start your 14-day free trial today. No credit card required.
+            Start your 7-day free trial + $10 credit today. No credit card required.
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
