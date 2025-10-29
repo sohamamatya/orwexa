@@ -103,15 +103,15 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Building the Future of{" "}
             <span className="text-gradient">Voice AI</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             We're on a mission to make every customer conversation exceptional through
             intelligent, empathetic AI voice technology.
           </p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
@@ -135,7 +135,7 @@ export default function AboutPage() {
                   <div className="text-4xl font-bold text-gradient mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-gray-300 font-medium">{stat.label}</div>
                 </div>
               );
             })}
@@ -144,32 +144,32 @@ export default function AboutPage() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Our <span className="text-gradient">Story</span>
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+          <div className="rounded-3xl p-8 md:p-12 shadow-xl bg-gray-800 border border-gray-700">
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 Orweza was founded in 2021 by a team of AI researchers and entrepreneurs who
                 saw a fundamental problem: businesses were struggling to handle growing
                 call volumes while maintaining quality customer service.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 We believed AI could help, but existing solutions felt robotic and
                 frustrating. So we set out to build something different—voice agents that
                 sound natural, understand context, and actually solve problems.
               </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 Today, Orweza powers millions of conversations for thousands of businesses
                 worldwide. From small startups to Fortune 500 companies, our AI voice
                 agents help organizations deliver exceptional customer experiences at scale.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 We're just getting started. Our vision is a world where every business can
                 provide instant, intelligent, and empathetic service to every customer,
                 every time.
@@ -180,13 +180,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Our <span className="text-gradient">Values</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
@@ -197,15 +197,15 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  className="text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 bg-gray-800"
                 >
                   <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -216,10 +216,10 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Our <span className="text-gradient">Journey</span>
             </h2>
           </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
             {timeline.map((milestone, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="flex items-start space-x-6 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-800 border border-gray-700"
               >
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
@@ -238,10 +238,10 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     {milestone.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {milestone.description}
                   </p>
                 </div>
@@ -252,13 +252,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Meet Our <span className="text-gradient">Leadership</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Experienced leaders passionate about AI and customer experience
             </p>
           </div>
@@ -276,13 +276,13 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                <h3 className="text-xl font-bold text-white mb-1">
                   {member.name}
                 </h3>
-                <div className="text-primary-600 font-medium mb-3">
+                <div className="text-primary-400 font-medium mb-3">
                   {member.role}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-300 text-sm leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -303,13 +303,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Get Started with Orweza
             </button>
             <a
               href="#"
-              className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200"
+              className="px-8 py-4 bg-transparent text-white border-2 border-gray-600 rounded-lg font-semibold text-lg hover:bg-gray-700 transition-all duration-200"
             >
               View Open Positions
             </a>

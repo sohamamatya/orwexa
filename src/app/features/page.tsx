@@ -120,8 +120,8 @@ export default function FeaturesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -129,11 +129,11 @@ export default function FeaturesPage() {
             <span>Everything You Need to Succeed</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Powerful Features for{" "}
             <span className="text-gradient">Modern Customer Service</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Orweza combines cutting-edge AI technology with enterprise-grade reliability to
             deliver exceptional voice experiences at scale.
           </p>
@@ -148,13 +148,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* Core Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Core <span className="text-gradient">Capabilities</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Built from the ground up to handle real-world customer conversations
             </p>
           </div>
@@ -168,13 +168,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* Integration Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Seamless <span className="text-gradient">Integrations</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Connect Orweza with your existing tools and workflows
             </p>
           </div>
@@ -188,13 +188,13 @@ export default function FeaturesPage() {
       </section>
 
       {/* Security & Compliance */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Enterprise-Grade <span className="text-gradient">Security</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Your data and your customers' privacy are our top priority
             </p>
           </div>
@@ -234,7 +234,7 @@ export default function FeaturesPage() {
           <div className="text-center mt-12">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Get Started Today
             </button>

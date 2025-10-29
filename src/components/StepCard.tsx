@@ -16,17 +16,23 @@ export default function StepCard({ number, icon: Icon, title, description }: Ste
       </div>
 
       {/* Card */}
-      <div className="bg-white p-8 pt-10 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
+      <div
+        className="p-8 pt-10 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full"
+        style={{backgroundColor: '#524f4f', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+      >
         {/* Icon */}
-        <div className="w-14 h-14 bg-gradient-soft rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-          <Icon className="w-7 h-7 text-primary-600" />
+        <div
+          className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
+          style={{background: 'linear-gradient(135deg, rgba(59, 126, 246, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%)'}}
+        >
+          <Icon className="w-7 h-7 text-primary-400" />
         </div>
 
         {/* Content */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3">
+        <h3 className="text-xl font-bold text-white mb-3">
           {title}
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-300 leading-relaxed">
           {description}
         </p>
       </div>

@@ -80,9 +80,9 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+        <div className="absolute inset-0 -z-10"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
 
@@ -95,12 +95,12 @@ export default function Home() {
                 <span>AI-Powered Voice Intelligence</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 Your AI Voice Agent for{" "}
                 <span className="text-gradient">Every Customer Call</span>
               </h1>
 
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Automate phone calls, answer inquiries, and schedule appointments with
                 intelligent voice AI that sounds human and scales effortlessly.
               </p>
@@ -115,20 +115,20 @@ export default function Home() {
                 </button>
                 <Link
                   href="/pricing"
-                  className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:bg-gray-50 border-2 border-gray-200 transition-all duration-200 flex items-center justify-center"
+                  className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
                 >
                   View Pricing
                 </Link>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-12 border-t border-gray-200">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-12 pt-12 border-t border-gray-700">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center sm:text-left">
                     <div className="text-3xl font-bold text-gradient mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                    <div className="text-sm text-gray-300">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -137,43 +137,43 @@ export default function Home() {
             {/* Right Column - Mock Phone UI */}
             <div className="relative animate-slide-up animate-delay-200">
               <div className="relative bg-gradient-primary rounded-3xl p-8 shadow-2xl">
-                <div className="bg-white rounded-2xl p-6 space-y-4">
-                  <div className="flex items-center space-x-3 pb-4 border-b border-gray-200">
+                <div className="rounded-2xl p-6 space-y-4 border border-gray-700" style={{backgroundColor: 'rgb(17 24 39)'}}>
+                  <div className="flex items-center space-x-3 pb-4 border-b border-gray-700">
                     <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Orweza AI Agent</div>
-                      <div className="text-sm text-gray-500">Ready to assist</div>
+                      <div className="font-semibold text-white">Orweza AI Agent</div>
+                      <div className="text-sm text-gray-400">Ready to assist</div>
                     </div>
                   </div>
 
                   <div className="space-y-3">
-                    <div className="bg-gray-100 rounded-lg p-4">
-                      <div className="text-sm text-gray-600 mb-1">Customer</div>
-                      <div className="text-gray-900">
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <div className="text-sm text-gray-400 mb-1">Customer</div>
+                      <div className="text-white">
                         "I'd like to schedule an appointment"
                       </div>
                     </div>
                     <div className="bg-gradient-soft rounded-lg p-4">
-                      <div className="text-sm text-primary-600 mb-1">Orweza AI</div>
-                      <div className="text-gray-900">
+                      <div className="text-sm text-primary-400 mb-1">Orweza AI</div>
+                      <div className="text-white">
                         "I'd be happy to help! What day works best for you?"
                       </div>
                     </div>
-                    <div className="bg-gray-100 rounded-lg p-4">
-                      <div className="text-sm text-gray-600 mb-1">Customer</div>
-                      <div className="text-gray-900">"Next Tuesday afternoon"</div>
+                    <div className="bg-gray-800 rounded-lg p-4">
+                      <div className="text-sm text-gray-400 mb-1">Customer</div>
+                      <div className="text-white">"Next Tuesday afternoon"</div>
                     </div>
                     <div className="bg-gradient-soft rounded-lg p-4">
-                      <div className="text-sm text-primary-600 mb-1">Orweza AI</div>
-                      <div className="text-gray-900">
+                      <div className="text-sm text-primary-400 mb-1">Orweza AI</div>
+                      <div className="text-white">
                         "Perfect! I have 2:00 PM available. I'll book that for you."
                       </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-center space-x-2 text-green-600 text-sm font-medium pt-4">
+                  <div className="flex items-center justify-center space-x-2 text-green-400 text-sm font-medium pt-4">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Appointment Scheduled Successfully</span>
                   </div>
@@ -181,16 +181,16 @@ export default function Home() {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 animate-float">
+              <div className="absolute -top-6 -right-6 rounded-2xl shadow-xl p-4 animate-float border border-gray-700" style={{backgroundColor: 'rgb(17 24 39)'}}>
                 <div className="flex items-center space-x-2">
                   <Shield className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-semibold">100% Secure</span>
+                  <span className="text-sm font-semibold text-white">100% Secure</span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 animate-float animate-delay-200">
+              <div className="absolute -bottom-6 -left-6 rounded-2xl shadow-xl p-4 animate-float animate-delay-200 border border-gray-700" style={{backgroundColor: 'rgb(17 24 39)'}}>
                 <div className="flex items-center space-x-2">
                   <Users className="w-5 h-5 text-primary-500" />
-                  <span className="text-sm font-semibold">10K+ Users</span>
+                  <span className="text-sm font-semibold text-white">10K+ Users</span>
                 </div>
               </div>
             </div>
@@ -199,14 +199,14 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Powerful Features for{" "}
               <span className="text-gradient">Modern Businesses</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Everything you need to deliver exceptional customer experiences through
               AI-powered voice conversations.
             </p>
@@ -236,14 +236,14 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get Started in{" "}
               <span className="text-gradient">Three Simple Steps</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Launch your AI voice agent in minutes, not months.
             </p>
           </div>
@@ -263,25 +263,25 @@ export default function Home() {
       </section>
 
       {/* Demo Audio Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Hear Orweza in <span className="text-gradient">Action</span>
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Listen to how natural and intelligent our AI voice agents sound.
             </p>
           </div>
 
           <div className="bg-gradient-primary rounded-3xl p-8 md:p-12 shadow-2xl">
-            <div className="bg-white rounded-2xl p-8">
+            <div className="rounded-2xl p-8 border border-gray-700" style={{backgroundColor: 'rgb(17 24 39)'}}>
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     Sample Call Recording
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-300">
                     Restaurant reservation handled by Orweza AI
                   </p>
                 </div>
@@ -299,8 +299,8 @@ export default function Home() {
                 </button>
 
                 <div className="flex-1 text-center md:text-right">
-                  <div className="text-sm text-gray-500 mb-2">Duration</div>
-                  <div className="text-2xl font-bold text-gray-900">1:24</div>
+                  <div className="text-sm text-gray-400 mb-2">Duration</div>
+                  <div className="text-2xl font-bold text-white">1:24</div>
                 </div>
               </div>
 
@@ -325,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Transform Your Customer Calls?
@@ -335,7 +335,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+            className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             Start Your Free Trial
           </button>

@@ -49,13 +49,16 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+      <div
+        className="relative rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto animate-slide-up"
+        style={{backgroundColor: '#524f4f', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+      >
         {/* Header */}
         <div className="sticky top-0 bg-gradient-primary p-6 rounded-t-2xl">
           <div className="flex justify-between items-start">
             <div>
               <h2 className="text-2xl font-bold text-white mb-1">Book a Demo</h2>
-              <p className="text-primary-100 text-sm">
+              <p className="text-white text-opacity-80 text-sm">
                 See Orweza in action
               </p>
             </div>
@@ -72,13 +75,16 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
         <form onSubmit={handleSubmit} className="p-6">
           {isSuccess ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-green-600" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{backgroundColor: 'rgba(34, 197, 94, 0.2)'}}
+              >
+                <Calendar className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-white mb-2">
                 Thank you!
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-300">
                 We'll be in touch shortly to schedule your demo.
               </p>
             </div>
@@ -86,7 +92,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
             <div className="space-y-4">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                   Full Name *
                 </label>
                 <div className="relative">
@@ -97,7 +103,8 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    style={{backgroundColor: '#1a1c2e', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                     placeholder="John Doe"
                   />
                 </div>
@@ -105,7 +112,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                   Email Address *
                 </label>
                 <div className="relative">
@@ -116,7 +123,8 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    style={{backgroundColor: '#1a1c2e', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                     placeholder="john@company.com"
                   />
                 </div>
@@ -124,7 +132,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-1">
                   Company *
                 </label>
                 <div className="relative">
@@ -135,7 +143,8 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                     required
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                    style={{backgroundColor: '#1a1c2e', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                     placeholder="Acme Inc."
                   />
                 </div>
@@ -143,7 +152,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
                   Phone Number
                 </label>
                 <input
@@ -151,14 +160,15 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                  style={{backgroundColor: '#1a1c2e', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
                   What are you looking to achieve?
                 </label>
                 <textarea
@@ -166,7 +176,8 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   rows={3}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-2.5 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
+                  style={{backgroundColor: '#1a1c2e', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                   placeholder="Tell us about your use case..."
                 />
               </div>

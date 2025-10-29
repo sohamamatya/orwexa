@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <nav className="fixed top-0 w-full backdrop-blur-md z-50" style={{backgroundColor: 'rgba(18, 20, 29, 0.8)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -40,7 +40,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className="text-gray-300 hover:text-white transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -60,26 +60,27 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors"
+            style={{backgroundColor: isOpen ? 'rgba(255, 255, 255, 0.05)' : 'transparent'}}
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-6 h-6 text-gray-200" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6 text-gray-200" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
+          <div className="md:hidden py-4 animate-fade-in" style={{borderTop: '1px solid rgba(255, 255, 255, 0.1)'}}>
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-700 hover:text-primary-600 transition-colors font-medium px-4 py-2"
+                  className="text-gray-300 hover:text-white transition-colors font-medium px-4 py-2"
                 >
                   {link.label}
                 </Link>

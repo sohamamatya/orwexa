@@ -40,7 +40,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer style={{backgroundColor: '#12141d', borderTop: '1px solid rgba(255, 255, 255, 0.1)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
@@ -63,15 +63,15 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-primary-400" />
-                <span>hello@orweza.ai</span>
+                <span className="text-gray-400">hello@orweza.ai</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 text-primary-400" />
-                <span>+1 (555) 123-4567</span>
+                <span className="text-gray-400">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <MapPin className="w-4 h-4 text-primary-400" />
-                <span>San Francisco, CA</span>
+                <span className="text-gray-400">San Francisco, CA</span>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-primary-400 transition-colors text-sm"
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-8"></div>
+        <div style={{borderTop: '1px solid rgba(255, 255, 255, 0.1)'}} className="my-8"></div>
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -114,9 +114,10 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors group"
+                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200 group"
+                  style={{backgroundColor: '#524f4f', border: '1px solid rgba(255, 255, 255, 0.1)'}}
                 >
-                  <Icon className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                  <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
                 </a>
               );
             })}

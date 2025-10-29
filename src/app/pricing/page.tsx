@@ -127,8 +127,8 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -136,11 +136,11 @@ export default function PricingPage() {
             <span>Simple, Transparent Pricing</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Choose the <span className="text-gradient">Perfect Plan</span> for Your
             Business
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Start with a 14-day free trial. No credit card required. Cancel anytime.
           </p>
 
@@ -148,7 +148,7 @@ export default function PricingPage() {
           <div className="flex items-center justify-center space-x-4 mb-12">
             <span
               className={`text-lg font-medium ${
-                billingCycle === "monthly" ? "text-gray-900" : "text-gray-500"
+                billingCycle === "monthly" ? "text-white" : "text-gray-300"
               }`}
             >
               Monthly
@@ -160,14 +160,15 @@ export default function PricingPage() {
               className="relative w-16 h-8 bg-gradient-primary rounded-full transition-all duration-300"
             >
               <div
-                className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform duration-300 ${
+                className={`absolute top-1 left-1 w-6 h-6 rounded-full transition-transform duration-300 ${
                   billingCycle === "annual" ? "translate-x-8" : ""
                 }`}
+                style={{backgroundColor: '#524f4f'}}
               ></div>
             </button>
             <span
               className={`text-lg font-medium ${
-                billingCycle === "annual" ? "text-gray-900" : "text-gray-500"
+                billingCycle === "annual" ? "text-white" : "text-gray-300"
               }`}
             >
               Annual{" "}
@@ -178,7 +179,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
@@ -189,13 +190,13 @@ export default function PricingPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Optional <span className="text-gradient">Add-ons</span>
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Enhance your plan with additional features
             </p>
           </div>
@@ -204,15 +205,15 @@ export default function PricingPage() {
             {addOns.map((addon, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-primary-300 transition-all duration-200"
+                className="rounded-2xl p-6 shadow-lg border-2 border-gray-700 hover:border-primary-300 transition-all duration-200 bg-gray-800"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {addon.title}
                 </h3>
                 <div className="text-3xl font-bold text-gradient mb-3">
                   {addon.price}
                 </div>
-                <p className="text-gray-600">{addon.description}</p>
+                <p className="text-gray-300">{addon.description}</p>
               </div>
             ))}
           </div>
@@ -220,10 +221,10 @@ export default function PricingPage() {
       </section>
 
       {/* Feature Comparison */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Compare <span className="text-gradient">All Features</span>
             </h2>
           </div>
@@ -231,17 +232,17 @@ export default function PricingPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">
+                <tr className="border-b-2 border-gray-600">
+                  <th className="text-left py-4 px-4 font-semibold text-white">
                     Feature
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Starter
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Pro
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Enterprise
                   </th>
                 </tr>
@@ -259,8 +260,8 @@ export default function PricingPage() {
                   { feature: "Custom AI Training", starter: false, pro: false, enterprise: true },
                   { feature: "SLA Guarantee", starter: false, pro: false, enterprise: true },
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-4 px-4 text-gray-700">{row.feature}</td>
+                  <tr key={index} className="border-b border-gray-700">
+                    <td className="py-4 px-4 text-gray-200">{row.feature}</td>
                     <td className="py-4 px-4 text-center">
                       {typeof row.starter === "boolean" ? (
                         row.starter ? (
@@ -269,7 +270,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.starter}</span>
+                        <span className="text-gray-200">{row.starter}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -280,7 +281,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.pro}</span>
+                        <span className="text-gray-200">{row.pro}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -291,7 +292,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.enterprise}</span>
+                        <span className="text-gray-200">{row.enterprise}</span>
                       )}
                     </td>
                   </tr>
@@ -303,10 +304,10 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Frequently Asked <span className="text-gradient">Questions</span>
             </h2>
           </div>
@@ -315,15 +316,15 @@ export default function PricingPage() {
             {faqs.map((faq, index) => (
               <details
                 key={index}
-                className="group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200"
+                className="group rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 bg-gray-800 border border-gray-700"
               >
                 <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h3 className="text-lg font-semibold text-white pr-4">
                     {faq.question}
                   </h3>
-                  <HelpCircle className="w-5 h-5 text-primary-600 flex-shrink-0 group-open:rotate-180 transition-transform" />
+                  <HelpCircle className="w-5 h-5 text-primary-400 flex-shrink-0 group-open:rotate-180 transition-transform" />
                 </summary>
-                <p className="mt-4 text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p className="mt-4 text-gray-300 leading-relaxed">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -331,7 +332,7 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Get Started?
@@ -341,7 +342,7 @@ export default function PricingPage() {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+            className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
           >
             Start Free Trial
           </button>

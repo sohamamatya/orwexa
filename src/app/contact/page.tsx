@@ -84,14 +84,14 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Get in <span className="text-gradient">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Have questions? We'd love to hear from you. Send us a message and we'll
             respond as soon as possible.
           </p>
@@ -99,7 +99,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => {
@@ -112,13 +112,13 @@ export default function ContactPage() {
                   <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-lg font-bold text-white mb-2">
                     {info.title}
                   </h3>
-                  <p className="text-primary-600 font-semibold mb-1">
+                  <p className="text-primary-400 font-semibold mb-1">
                     {info.details}
                   </p>
-                  <p className="text-sm text-gray-600">{info.description}</p>
+                  <p className="text-sm text-gray-300">{info.description}</p>
                 </div>
               );
             })}
@@ -127,12 +127,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            <div className="rounded-3xl p-8 shadow-xl border border-gray-700 bg-gray-800">
+              <h2 className="text-3xl font-bold text-white mb-6">
                 Send Us a Message
               </h2>
 
@@ -141,10 +141,10 @@ export default function ContactPage() {
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle2 className="w-10 h-10 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-white mb-3">
                     Message Sent!
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-300">
                     Thank you for contacting us. We'll get back to you soon.
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Full Name *
                     </label>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                       placeholder="John Doe"
                     />
                   </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Email Address *
                     </label>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -197,7 +197,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="company"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-gray-300 mb-2"
                       >
                         Company
                       </label>
@@ -208,14 +208,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, company: e.target.value })
                         }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                         placeholder="Acme Inc."
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-gray-300 mb-2"
                       >
                         Phone
                       </label>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Subject *
                     </label>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                     >
                       <option value="">Select a subject</option>
                       <option value="demo">Request a Demo</option>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
                       Message *
                     </label>
@@ -274,7 +274,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none bg-gray-700 text-white"
                       placeholder="Tell us more about your needs..."
                     />
                   </div>
@@ -300,7 +300,7 @@ export default function ContactPage() {
                   <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-white">
                     Office Hours
                   </h3>
                 </div>
@@ -308,20 +308,20 @@ export default function ContactPage() {
                   {officeHours.map((schedule, index) => (
                     <div
                       key={index}
-                      className="flex justify-between items-center py-3 border-b border-gray-200 last:border-0"
+                      className="flex justify-between items-center py-3 border-b border-gray-600 last:border-0"
                     >
-                      <span className="font-medium text-gray-900">
+                      <span className="font-medium text-white">
                         {schedule.day}
                       </span>
-                      <span className="text-gray-600">{schedule.hours}</span>
+                      <span className="text-gray-300">{schedule.hours}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Quick Links */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="rounded-3xl p-8 shadow-xl border border-gray-700 bg-gray-800">
+                <h3 className="text-2xl font-bold text-white mb-6">
                   Quick Links
                 </h3>
                 <div className="space-y-4">
@@ -329,10 +329,10 @@ export default function ContactPage() {
                     href="/pricing"
                     className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-1">
+                    <h4 className="font-semibold text-white mb-1">
                       View Pricing
                     </h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-300">
                       Explore our plans and pricing
                     </p>
                   </a>
@@ -340,10 +340,10 @@ export default function ContactPage() {
                     href="/features"
                     className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-1">
+                    <h4 className="font-semibold text-white mb-1">
                       Browse Features
                     </h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-300">
                       See what Orweza can do for you
                     </p>
                   </a>
@@ -351,10 +351,10 @@ export default function ContactPage() {
                     href="#"
                     className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-1">
+                    <h4 className="font-semibold text-white mb-1">
                       Help Center
                     </h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-300">
                       Find answers to common questions
                     </p>
                   </a>
@@ -362,13 +362,13 @@ export default function ContactPage() {
               </div>
 
               {/* Map Placeholder */}
-              <div className="bg-gray-200 rounded-3xl h-64 flex items-center justify-center overflow-hidden">
+              <div className="bg-gray-800 border border-gray-700 rounded-3xl h-64 flex items-center justify-center overflow-hidden">
                 <div className="text-center p-8">
                   <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                  <p className="text-gray-600 font-medium">
+                  <p className="text-white font-medium">
                     123 Market Street
                   </p>
-                  <p className="text-gray-500">San Francisco, CA 94103</p>
+                  <p className="text-gray-300">San Francisco, CA 94103</p>
                 </div>
               </div>
             </div>
@@ -389,13 +389,13 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#"
-              className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Visit Help Center
             </a>
             <a
               href="#"
-              className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200"
+              className="px-8 py-4 bg-transparent text-white border-2 border-gray-600 rounded-lg font-semibold text-lg hover:bg-gray-700 transition-all duration-200"
             >
               Start Live Chat
             </a>

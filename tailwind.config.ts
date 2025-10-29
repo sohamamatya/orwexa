@@ -64,6 +64,13 @@ const config: Config = {
           900: '#18181b',
           950: '#09090b',
         },
+        // Custom theme colors inspired by awaz.ai
+        theme: {
+          light: '#ffffff',          // Primary background (white)
+          card: '#ffffff',           // Card background (white)
+          input: '#f8fafc',          // Input background (very light gray)
+          border: 'rgba(226, 232, 240, 0.8)',  // Subtle borders
+        },
       },
       spacing: {
         '18': '4.5rem',
@@ -154,8 +161,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-10px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 126, 246, 0.3), 0 0 40px rgba(99, 102, 241, 0.2)' },
-          '100%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.4), 0 0 60px rgba(168, 85, 247, 0.3)' },
+          '0%': { boxShadow: '0 0 20px rgba(59, 126, 246, 0.3), 0 0 40px rgba(37, 99, 235, 0.2)' },
+          '100%': { boxShadow: '0 0 30px rgba(37, 99, 235, 0.4), 0 0 60px rgba(59, 126, 246, 0.3)' },
         },
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
@@ -175,9 +182,9 @@ const config: Config = {
         'glow-md': '0 0 20px rgba(59, 126, 246, 0.3), 0 0 30px rgba(99, 102, 241, 0.2)',
         'glow-lg': '0 0 30px rgba(59, 126, 246, 0.4), 0 0 50px rgba(99, 102, 241, 0.3)',
         'glow-xl': '0 0 40px rgba(59, 126, 246, 0.5), 0 0 70px rgba(99, 102, 241, 0.4)',
-        'glow-purple': '0 0 30px rgba(168, 85, 247, 0.4), 0 0 50px rgba(147, 51, 234, 0.3)',
-        'orweza': '0 10px 40px rgba(59, 126, 246, 0.2), 0 5px 20px rgba(168, 85, 247, 0.15)',
-        'orweza-lg': '0 20px 60px rgba(59, 126, 246, 0.25), 0 10px 30px rgba(168, 85, 247, 0.2)',
+        'glow-purple': '0 0 30px rgba(59, 126, 246, 0.4), 0 0 50px rgba(37, 99, 235, 0.3)',
+        'orweza': '0 10px 40px rgba(59, 126, 246, 0.15), 0 5px 20px rgba(37, 99, 235, 0.1)',
+        'orweza-lg': '0 20px 60px rgba(59, 126, 246, 0.2), 0 10px 30px rgba(37, 99, 235, 0.15)',
         // Elevation system
         'elevation-1': '0 2px 4px rgba(0, 0, 0, 0.05)',
         'elevation-2': '0 4px 8px rgba(0, 0, 0, 0.08)',
@@ -188,12 +195,12 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         // Orweza brand gradients
-        'gradient-orweza': 'linear-gradient(135deg, #3b7ef6 0%, #6366f1 50%, #a855f7 100%)',
-        'gradient-orweza-hover': 'linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #9333ea 100%)',
-        'gradient-orweza-reverse': 'linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #3b7ef6 100%)',
-        'gradient-orweza-radial': 'radial-gradient(circle at center, #3b7ef6 0%, #6366f1 50%, #a855f7 100%)',
+        'gradient-orweza': 'linear-gradient(135deg, #3b7ef6 0%, #2563eb 100%)',
+        'gradient-orweza-hover': 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
+        'gradient-orweza-reverse': 'linear-gradient(135deg, #2563eb 0%, #3b7ef6 100%)',
+        'gradient-orweza-radial': 'radial-gradient(circle at center, #3b7ef6 0%, #2563eb 100%)',
         // Mesh gradients
-        'mesh-orweza': 'radial-gradient(at 0% 0%, #3b7ef6 0px, transparent 50%), radial-gradient(at 100% 0%, #a855f7 0px, transparent 50%), radial-gradient(at 100% 100%, #6366f1 0px, transparent 50%), radial-gradient(at 0% 100%, #3b7ef6 0px, transparent 50%)',
+        'mesh-orweza': 'radial-gradient(at 0% 0%, #3b7ef6 0px, transparent 50%), radial-gradient(at 100% 0%, #2563eb 0px, transparent 50%), radial-gradient(at 100% 100%, #3b7ef6 0px, transparent 50%), radial-gradient(at 0% 100%, #2563eb 0px, transparent 50%)',
         // Subtle patterns
         'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
       },
