@@ -76,17 +76,33 @@ export default function PricingCard({
       </ul>
 
       {/* CTA Button */}
-      <Link
-        href={ctaLink}
-        className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-all duration-200 ${
-          popular
-            ? 'bg-gradient-primary hover:shadow-lg hover:scale-105'
-            : 'hover:bg-opacity-80'
-        }`}
-        style={popular ? {color: '#ffffff'} : {backgroundColor: '#625f5f', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
-      >
-        {cta}
-      </Link>
+      {ctaLink.startsWith('http') ? (
+        <a
+          href={ctaLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-all duration-200 ${
+            popular
+              ? 'bg-gradient-primary hover:shadow-lg hover:scale-105'
+              : 'hover:bg-opacity-80'
+          }`}
+          style={popular ? {color: '#ffffff'} : {backgroundColor: '#625f5f', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+        >
+          {cta}
+        </a>
+      ) : (
+        <Link
+          href={ctaLink}
+          className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-all duration-200 ${
+            popular
+              ? 'bg-gradient-primary hover:shadow-lg hover:scale-105'
+              : 'hover:bg-opacity-80'
+          }`}
+          style={popular ? {color: '#ffffff'} : {backgroundColor: '#625f5f', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+        >
+          {cta}
+        </Link>
+      )}
     </div>
   );
 }

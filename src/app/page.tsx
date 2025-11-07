@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   Phone,
@@ -18,10 +17,8 @@ import {
   ArrowRight,
   Star,
 } from "lucide-react";
-import BookDemoModal from "@/components/BookDemoModal";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -44,13 +41,15 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <a
+                  href="https://app.orwexa.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2"
                 >
-                  <span>Start Free Trial – 7 days + $10 credit</span>
+                  <span>Login</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
                 <Link
                   href="/pricing"
                   className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
@@ -170,12 +169,14 @@ export default function Home() {
 
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setIsModalOpen(true)}
+              <a
+                href="https://app.orwexa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
-                Start Free Trial – 7 days + $10 credit
-              </button>
+                Login
+              </a>
               <Link
                 href="/pricing"
                 className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
@@ -455,12 +456,14 @@ export default function Home() {
             No setup stress. No scripts to write from scratch. No awkward cold calls. Just more booked work.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href="https://app.orwexa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              Start Free Trial – 7 days + $10 credit
-            </button>
+              Login
+            </a>
             <Link
               href="/pricing"
               className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
@@ -471,8 +474,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

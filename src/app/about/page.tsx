@@ -1,53 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Target,
-  Lightbulb,
-  Heart,
-  Zap,
-} from "lucide-react";
-import BookDemoModal from "@/components/BookDemoModal";
-
 export default function AboutPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-  const values = [
-    {
-      icon: Target,
-      title: "Customer First",
-      description:
-        "Every decision we make starts with our customers. We're obsessed with delivering value and exceeding expectations.",
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation",
-      description:
-        "We push the boundaries of AI technology to create voice agents that sound human and solve real problems.",
-    },
-    {
-      icon: Heart,
-      title: "Empathy",
-      description:
-        "Technology should enhance human connections, not replace them. We build AI that understands and cares.",
-    },
-    {
-      icon: Zap,
-      title: "Excellence",
-      description:
-        "We're committed to the highest standards in everything we do, from code quality to customer support.",
-    },
-  ];
-
-  const team = [
-    {
-      name: "Soham Amatya",
-      role: "Founder",
-      bio: "Built Orwexa from personal experience with cold calling and lead management. Director at Dohoot Technologies.",
-      image: "SA",
-    },
-  ];
 
 
   return (
@@ -112,72 +65,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Our <span className="text-gradient">Values</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              The principles that guide everything we do
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 bg-gray-800"
-                >
-                  <div className="w-16 h-16 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Join Us on Our Mission
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            We're always looking for talented people who share our vision.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
-            >
-              Get Started with Orweza
-            </button>
-            <a
-              href="#"
-              className="px-8 py-4 bg-transparent text-white border-2 border-gray-600 rounded-lg font-semibold text-lg hover:bg-gray-700 transition-all duration-200"
-            >
-              View Open Positions
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

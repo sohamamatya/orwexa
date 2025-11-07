@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   Phone,
@@ -20,10 +19,8 @@ import {
   Zap,
   ArrowRight,
 } from "lucide-react";
-import BookDemoModal from "@/components/BookDemoModal";
 
 export default function FeaturesPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -40,12 +37,14 @@ export default function FeaturesPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href="https://app.orwexa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              Start Free Trial – 7 days + $10 credit
-            </button>
+              Login
+            </a>
             <Link
               href="/pricing"
               className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
@@ -434,12 +433,14 @@ export default function FeaturesPage() {
             All the power of a 24/7 AI receptionist — none of the overhead. Start your free trial and let Orwexa handle your next call.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
+            <a
+              href="https://app.orwexa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              Start Free Trial – 7 days + $10 credit
-            </button>
+              Login
+            </a>
             <Link
               href="/pricing"
               className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
@@ -450,8 +451,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

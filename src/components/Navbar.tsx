@@ -49,12 +49,14 @@ export default function Navbar() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <Link
-              href="/contact"
+            <a
+              href="https://app.orwexa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 bg-gradient-primary text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
             >
-              Book a Demo
-            </Link>
+              Login
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,13 +87,15 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
+              <a
+                href="https://app.orwexa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="mx-4 px-6 py-2.5 bg-gradient-primary text-white rounded-lg font-semibold text-center hover:shadow-lg transition-all duration-200"
               >
-                Book a Demo
-              </Link>
+                Login
+              </a>
             </div>
           </div>
         )}

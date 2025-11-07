@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Check, HelpCircle, Sparkles } from "lucide-react";
 import PricingCard from "@/components/PricingCard";
-import BookDemoModal from "@/components/BookDemoModal";
 
 export default function PricingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const pricingPlans = [
     {
@@ -31,7 +28,7 @@ export default function PricingPage() {
       ],
       popular: false,
       cta: "Start Free Trial",
-      ctaLink: "/contact",
+      ctaLink: "https://app.orwexa.com/",
     },
     {
       title: "Pro",
@@ -55,7 +52,7 @@ export default function PricingPage() {
       ],
       popular: true,
       cta: "Start Free Trial",
-      ctaLink: "/contact",
+      ctaLink: "https://app.orwexa.com/",
     },
     {
       title: "Enterprise / Custom",
@@ -85,34 +82,69 @@ export default function PricingPage() {
 
   const faqs = [
     {
-      question: "Can I switch plans later?",
+      question: "What is Orwexa?",
       answer:
-        "Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
+        "Orwexa is an AI-powered voice platform that automates inbound and outbound calls. It answers calls, books appointments, follows up with leads, and integrates with your tools — helping businesses convert more calls into customers.",
     },
     {
-      question: "How does call billing work?",
+      question: "Do I need to install anything?",
       answer:
-        "Calls are billed per 60 seconds based on your plan's per-minute rate. For example, on the Starter plan at $0.39/min, a 2-minute call would cost $0.78.",
+        "No. Orwexa is 100% cloud-based. You can access it securely from any device through your web browser.",
+    },
+    {
+      question: "Can I use Orwexa for Sales Calls?",
+      answer:
+        "Absolutely. Orwexa is designed to enhance sales efficiency by providing AI agents that engage leads, answer questions, qualify prospects, and book appointments.",
+    },
+    {
+      question: "Can I use Orwexa for my local business?",
+      answer:
+        "Yes! Orwexa fits any local business that depends on calls, appointments, or leads. From real estate to clinics, salons, and trades, our AI agents handle your calls, bookings, and follow-ups automatically.",
+    },
+    {
+      question: "What are AI Voice Assistants?",
+      answer:
+        "AI Voice Assistants are smart, natural-sounding agents that answer calls, schedule appointments, follow up with leads, and handle repetitive customer interactions — just like a real receptionist would.",
+    },
+    {
+      question: "Can Orwexa book appointments?",
+      answer:
+        "Yes. Orwexa integrates with Google Calendar to check availability, schedule meetings, and send confirmations automatically.",
+    },
+    {
+      question: "What's included in the monthly fee?",
+      answer:
+        "Your subscription covers AI agents, user accounts, features listed in your plan, and all software updates. Call minutes are billed separately at your plan's per-minute rate.",
     },
     {
       question: "Is there a free trial?",
       answer:
-        "Yes! We offer a 7-day free trial with $10 credit on all plans. No credit card required to start. You'll get full access to all features during the trial period.",
+        "Yes. Every plan includes a 7-day free trial and $10 call credit. You'll get full access to all features during this time.",
+    },
+    {
+      question: "How does call billing work?",
+      answer:
+        "Orwexa bills calls per 60 seconds based on your plan's rate. On the Starter plan, calls cost $0.39 per minute; on the Pro plan, they cost $0.29 per minute; and on the Enterprise plan, the rate is $0.19 per minute.",
+    },
+    {
+      question: "Can I switch plans later?",
+      answer:
+        "Yes. You can upgrade or downgrade anytime. Changes take effect immediately, and adjustments are prorated automatically.",
+    },
+    {
+      question: "Can I cancel anytime?",
+      answer:
+        "Yes. There are no long-term contracts (unless you're on a custom enterprise plan). You can cancel your subscription directly from your account dashboard.",
+    },
+    {
+      question: "What is Orwexa's refund policy?",
+      answer:
+        "Orwexa offers clear and transparent subscription terms:\n\n• No Refund Policy: Orwexa subscriptions are non-refundable. We offer free trials and transparent billing to help you evaluate the platform fully before committing.\n\n• Free Trial & Commitment: Both the Starter and Pro plans include a risk-free 7-day trial. You won't be charged if you cancel your subscription anytime during the trial period.\n\n• Subscription Changes: You can upgrade, downgrade, or cancel your subscription at any time. Changes take immediate effect with prorated adjustments. However, refunds for partial subscription periods are not available.\n\nWe recommend carefully evaluating the platform during your trial to ensure it meets your needs before proceeding with payment.",
     },
     {
       question: "What payment methods do you accept?",
       answer:
         "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and ACH transfers for Enterprise customers.",
-    },
-    {
-      question: "What's included in the monthly fee?",
-      answer:
-        "The monthly fee covers platform access, your AI agents, users, and all features listed in your plan. Call costs are billed separately based on usage.",
-    },
-    {
-      question: "Can I cancel anytime?",
-      answer:
-        "Absolutely. There are no long-term contracts (except for custom Enterprise agreements). You can cancel your subscription at any time from your account settings.",
     },
   ];
 
@@ -314,17 +346,17 @@ export default function PricingPage() {
           <p className="text-xl text-gray-300 mb-8">
             Start your 7-day free trial + $10 credit today. No credit card required.
           </p>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200"
+          <a
+            href="https://app.orwexa.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200 inline-block"
           >
-            Start Free Trial
-          </button>
+            Login
+          </a>
         </div>
       </section>
 
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
