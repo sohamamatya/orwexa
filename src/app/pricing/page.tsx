@@ -1,71 +1,78 @@
 "use client";
 
-import { useState } from "react";
 import { Check, HelpCircle, Sparkles } from "lucide-react";
 import PricingCard from "@/components/PricingCard";
-import BookDemoModal from "@/components/BookDemoModal";
 
 export default function PricingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
 
   const pricingPlans = [
     {
       title: "Starter",
-      price: billingCycle === "monthly" ? "$99" : "$79",
-      period: billingCycle === "monthly" ? "/month" : "/month",
+      price: "$29",
+      period: "/month",
+      callCost: "$0.39 / min",
+      billing: "Billed per 60 seconds",
       description: "Perfect for small businesses getting started with AI voice",
       features: [
-        "Up to 500 calls per month",
-        "1 AI voice agent",
-        "Basic voice customization",
+        "1 AI Voice Agent",
+        "1 User",
+        "Calendar booking",
+        "Real-time scheduling",
+        "Unlimited SMS & WhatsApp",
+        "Campaign Manager",
+        "Knowledge Base",
+        "Standard voices & accents (ElevenLabs)",
+        "Call recording & transcripts",
+        "Basic analytics",
         "Email support",
-        "Call recording & transcription",
-        "Basic analytics dashboard",
-        "CRM integration (3 platforms)",
       ],
       popular: false,
       cta: "Start Free Trial",
-      ctaLink: "/contact",
+      ctaLink: "https://app.orwexa.com/",
     },
     {
       title: "Pro",
-      price: billingCycle === "monthly" ? "$299" : "$239",
-      period: billingCycle === "monthly" ? "/month" : "/month",
+      price: "$99",
+      period: "/month",
+      callCost: "$0.29 / min",
+      billing: "Billed per 60 seconds",
       description: "For growing businesses that need more power and flexibility",
       features: [
-        "Up to 2,000 calls per month",
-        "3 AI voice agents",
-        "Advanced voice customization",
-        "Priority support (24/7)",
-        "Advanced analytics & reporting",
-        "Custom conversation flows",
-        "All CRM integrations",
-        "API access",
-        "Multi-language support",
-        "Sentiment analysis",
+        "5 AI Agents",
+        "5 Users",
+        "Multi-calendar integration",
+        "Advanced campaigns",
+        "CRM & API integrations",
+        "Custom voices & accents",
+        "Batch outbound calls",
+        "Analytics & reports",
+        "Connect Twilio / Telynx",
+        "Unlimited SMS & WhatsApp",
+        "24/7 email + chat support",
       ],
       popular: true,
       cta: "Start Free Trial",
-      ctaLink: "/contact",
+      ctaLink: "https://app.orwexa.com/",
     },
     {
-      title: "Enterprise",
-      price: "Custom",
-      period: "",
+      title: "Enterprise / Custom",
+      price: "$499",
+      period: "/month",
+      callCost: "$0.19 / min",
+      billing: "Billed per 60 seconds",
       description: "Tailored solutions for large organizations with unique needs",
       features: [
-        "Unlimited calls",
-        "Unlimited AI voice agents",
-        "Custom voice cloning",
+        "Unlimited AI Agents",
+        "Unlimited Users",
         "Dedicated account manager",
-        "Custom integrations",
-        "SLA guarantee (99.9% uptime)",
-        "Advanced security features",
-        "HIPAA compliance",
-        "White-label options",
-        "Custom AI training",
-        "On-premise deployment available",
+        "Multi-language voice options",
+        "Full onboarding & setup",
+        "Custom integrations (CRM, ERP, tools)",
+        "Priority routing & support",
+        "SLA 99.9% uptime",
+        "Advanced analytics & reports",
+        "Private hosting & compliance",
+        "Custom AI training & voice tuning",
       ],
       popular: false,
       cta: "Contact Sales",
@@ -75,60 +82,77 @@ export default function PricingPage() {
 
   const faqs = [
     {
-      question: "Can I switch plans later?",
+      question: "What is Orwexa?",
       answer:
-        "Yes! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
+        "Orwexa is an AI-powered voice platform that automates inbound and outbound calls. It answers calls, books appointments, follows up with leads, and integrates with your tools — helping businesses convert more calls into customers.",
     },
     {
-      question: "What happens if I exceed my call limit?",
+      question: "Do I need to install anything?",
       answer:
-        "We'll notify you when you're approaching your limit. You can either upgrade your plan or purchase additional call credits at $0.20 per call.",
+        "No. Orwexa is 100% cloud-based. You can access it securely from any device through your web browser.",
+    },
+    {
+      question: "Can I use Orwexa for Sales Calls?",
+      answer:
+        "Absolutely. Orwexa is designed to enhance sales efficiency by providing AI agents that engage leads, answer questions, qualify prospects, and book appointments.",
+    },
+    {
+      question: "Can I use Orwexa for my local business?",
+      answer:
+        "Yes! Orwexa fits any local business that depends on calls, appointments, or leads. From real estate to clinics, salons, and trades, our AI agents handle your calls, bookings, and follow-ups automatically.",
+    },
+    {
+      question: "What are AI Voice Assistants?",
+      answer:
+        "AI Voice Assistants are smart, natural-sounding agents that answer calls, schedule appointments, follow up with leads, and handle repetitive customer interactions — just like a real receptionist would.",
+    },
+    {
+      question: "Can Orwexa book appointments?",
+      answer:
+        "Yes. Orwexa integrates with Google Calendar to check availability, schedule meetings, and send confirmations automatically.",
+    },
+    {
+      question: "What's included in the monthly fee?",
+      answer:
+        "Your subscription covers AI agents, user accounts, features listed in your plan, and all software updates. Call minutes are billed separately at your plan's per-minute rate.",
     },
     {
       question: "Is there a free trial?",
       answer:
-        "Yes! We offer a 14-day free trial on all plans. No credit card required to start. You'll get full access to all features during the trial period.",
+        "Yes. Every plan includes a 7-day free trial and $10 call credit. You'll get full access to all features during this time.",
+    },
+    {
+      question: "How does call billing work?",
+      answer:
+        "Orwexa bills calls per 60 seconds based on your plan's rate. On the Starter plan, calls cost $0.39 per minute; on the Pro plan, they cost $0.29 per minute; and on the Enterprise plan, the rate is $0.19 per minute.",
+    },
+    {
+      question: "Can I switch plans later?",
+      answer:
+        "Yes. You can upgrade or downgrade anytime. Changes take effect immediately, and adjustments are prorated automatically.",
+    },
+    {
+      question: "Can I cancel anytime?",
+      answer:
+        "Yes. There are no long-term contracts (unless you're on a custom enterprise plan). You can cancel your subscription directly from your account dashboard.",
+    },
+    {
+      question: "What is Orwexa's refund policy?",
+      answer:
+        "Orwexa offers clear and transparent subscription terms:\n\n• No Refund Policy: Orwexa subscriptions are non-refundable. We offer free trials and transparent billing to help you evaluate the platform fully before committing.\n\n• Free Trial & Commitment: Both the Starter and Pro plans include a risk-free 7-day trial. You won't be charged if you cancel your subscription anytime during the trial period.\n\n• Subscription Changes: You can upgrade, downgrade, or cancel your subscription at any time. Changes take immediate effect with prorated adjustments. However, refunds for partial subscription periods are not available.\n\nWe recommend carefully evaluating the platform during your trial to ensure it meets your needs before proceeding with payment.",
     },
     {
       question: "What payment methods do you accept?",
       answer:
         "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and ACH transfers for Enterprise customers.",
     },
-    {
-      question: "Do you offer discounts for annual billing?",
-      answer:
-        "Yes! Annual billing saves you 20% compared to monthly billing. You can switch between monthly and annual billing at any time.",
-    },
-    {
-      question: "Can I cancel anytime?",
-      answer:
-        "Absolutely. There are no long-term contracts (except for custom Enterprise agreements). You can cancel your subscription at any time from your account settings.",
-    },
-  ];
-
-  const addOns = [
-    {
-      title: "Additional Calls",
-      price: "$50",
-      description: "1,000 extra calls per month",
-    },
-    {
-      title: "Custom Voice Clone",
-      price: "$199",
-      description: "One-time fee for voice cloning",
-    },
-    {
-      title: "Premium Support",
-      price: "$99",
-      description: "Dedicated support channel",
-    },
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -136,49 +160,18 @@ export default function PricingPage() {
             <span>Simple, Transparent Pricing</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Choose the <span className="text-gradient">Perfect Plan</span> for Your
             Business
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Start with a 14-day free trial. No credit card required. Cancel anytime.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Start with a 7-day free trial + $10 credit. No credit card required.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mb-12">
-            <span
-              className={`text-lg font-medium ${
-                billingCycle === "monthly" ? "text-gray-900" : "text-gray-500"
-              }`}
-            >
-              Monthly
-            </span>
-            <button
-              onClick={() =>
-                setBillingCycle(billingCycle === "monthly" ? "annual" : "monthly")
-              }
-              className="relative w-16 h-8 bg-gradient-primary rounded-full transition-all duration-300"
-            >
-              <div
-                className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-transform duration-300 ${
-                  billingCycle === "annual" ? "translate-x-8" : ""
-                }`}
-              ></div>
-            </button>
-            <span
-              className={`text-lg font-medium ${
-                billingCycle === "annual" ? "text-gray-900" : "text-gray-500"
-              }`}
-            >
-              Annual{" "}
-              <span className="text-green-600 text-sm">(Save 20%)</span>
-            </span>
-          </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
@@ -188,42 +181,55 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Add-ons */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
-        <div className="max-w-7xl mx-auto">
+      {/* Pricing Summary Table */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Optional <span className="text-gradient">Add-ons</span>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Pricing <span className="text-gradient">Summary</span>
             </h2>
-            <p className="text-xl text-gray-600">
-              Enhance your plan with additional features
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {addOns.map((addon, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-primary-300 transition-all duration-200"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {addon.title}
-                </h3>
-                <div className="text-3xl font-bold text-gradient mb-3">
-                  {addon.price}
-                </div>
-                <p className="text-gray-600">{addon.description}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto">
+            <table className="w-full bg-gray-800 rounded-2xl border border-gray-700">
+              <thead>
+                <tr className="border-b-2 border-gray-600">
+                  <th className="text-left py-4 px-6 font-semibold text-white">Plan</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Monthly Fee</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Call Cost</th>
+                  <th className="text-center py-4 px-6 font-semibold text-white">Billing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-700">
+                  <td className="py-4 px-6 text-white font-medium">Starter</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$29 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.39 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+                <tr className="border-b border-gray-700 bg-primary-500/10">
+                  <td className="py-4 px-6 text-white font-medium">Pro</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$99 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.29 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 text-white font-medium">Enterprise</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$499 / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.19 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* Feature Comparison */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Compare <span className="text-gradient">All Features</span>
             </h2>
           </div>
@@ -231,36 +237,37 @@ export default function PricingPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="text-left py-4 px-4 font-semibold text-gray-900">
+                <tr className="border-b-2 border-gray-600">
+                  <th className="text-left py-4 px-4 font-semibold text-white">
                     Feature
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Starter
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Pro
                   </th>
-                  <th className="text-center py-4 px-4 font-semibold text-gray-900">
+                  <th className="text-center py-4 px-4 font-semibold text-white">
                     Enterprise
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feature: "Monthly Calls", starter: "500", pro: "2,000", enterprise: "Unlimited" },
-                  { feature: "AI Voice Agents", starter: "1", pro: "3", enterprise: "Unlimited" },
-                  { feature: "Voice Customization", starter: true, pro: true, enterprise: true },
-                  { feature: "Call Recording", starter: true, pro: true, enterprise: true },
-                  { feature: "Analytics Dashboard", starter: true, pro: true, enterprise: true },
-                  { feature: "CRM Integration", starter: "3", pro: "All", enterprise: "Custom" },
-                  { feature: "API Access", starter: false, pro: true, enterprise: true },
-                  { feature: "24/7 Support", starter: false, pro: true, enterprise: true },
-                  { feature: "Custom AI Training", starter: false, pro: false, enterprise: true },
-                  { feature: "SLA Guarantee", starter: false, pro: false, enterprise: true },
+                  { feature: "AI Voice Agents", starter: "1", pro: "5", enterprise: "Unlimited" },
+                  { feature: "Users", starter: "1", pro: "5", enterprise: "Unlimited" },
+                  { feature: "Calendar Integration", starter: "Calendar booking", pro: "Multi-calendar", enterprise: "Multi-calendar & routing" },
+                  { feature: "Scheduling", starter: "Real-time scheduling", pro: "Real-time scheduling", enterprise: "Full onboarding & scheduling setup" },
+                  { feature: "Campaigns", starter: "Campaign Manager", pro: "Advanced Campaigns", enterprise: "Advanced Campaigns + Automation" },
+                  { feature: "CRM & Integrations", starter: "Basic CRM integration", pro: "CRM & API integrations", enterprise: "Custom integrations (CRM, ERP, tools)" },
+                  { feature: "Voice & Accents", starter: "Standard voices (ElevenLabs)", pro: "Custom voices & accents", enterprise: "Multi-language voice options" },
+                  { feature: "Analytics & Reporting", starter: "Basic analytics", pro: "Analytics & reports", enterprise: "Advanced analytics suite" },
+                  { feature: "Messaging", starter: "Unlimited SMS & WhatsApp", pro: "Unlimited SMS & WhatsApp", enterprise: "Unlimited SMS & WhatsApp" },
+                  { feature: "Support", starter: "Email support", pro: "24/7 email + chat support", enterprise: "Dedicated manager + priority support" },
+                  { feature: "Extras / Infrastructure", starter: "Call recording & transcripts", pro: "Connect Twilio / Telynx", enterprise: "SLA 99.9% uptime · Private hosting · Compliance" },
                 ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-4 px-4 text-gray-700">{row.feature}</td>
+                  <tr key={index} className="border-b border-gray-700">
+                    <td className="py-4 px-4 text-gray-200">{row.feature}</td>
                     <td className="py-4 px-4 text-center">
                       {typeof row.starter === "boolean" ? (
                         row.starter ? (
@@ -269,7 +276,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.starter}</span>
+                        <span className="text-gray-200">{row.starter}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -280,7 +287,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.pro}</span>
+                        <span className="text-gray-200">{row.pro}</span>
                       )}
                     </td>
                     <td className="py-4 px-4 text-center">
@@ -291,7 +298,7 @@ export default function PricingPage() {
                           <span className="text-gray-300">-</span>
                         )
                       ) : (
-                        <span className="text-gray-700">{row.enterprise}</span>
+                        <span className="text-gray-200">{row.enterprise}</span>
                       )}
                     </td>
                   </tr>
@@ -303,10 +310,10 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-soft">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Frequently Asked <span className="text-gradient">Questions</span>
             </h2>
           </div>
@@ -315,15 +322,15 @@ export default function PricingPage() {
             {faqs.map((faq, index) => (
               <details
                 key={index}
-                className="group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200"
+                className="group rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 bg-gray-800 border border-gray-700"
               >
                 <summary className="flex items-center justify-between cursor-pointer list-none">
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h3 className="text-lg font-semibold text-white pr-4">
                     {faq.question}
                   </h3>
-                  <HelpCircle className="w-5 h-5 text-primary-600 flex-shrink-0 group-open:rotate-180 transition-transform" />
+                  <HelpCircle className="w-5 h-5 text-primary-400 flex-shrink-0 group-open:rotate-180 transition-transform" />
                 </summary>
-                <p className="mt-4 text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p className="mt-4 text-gray-300 leading-relaxed">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -331,25 +338,25 @@ export default function PricingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Start your 14-day free trial today. No credit card required.
+            Start your 7-day free trial + $10 credit today. No credit card required.
           </p>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+          <a
+            href="https://app.orwexa.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-primary-500 text-white rounded-lg font-semibold text-lg hover:bg-primary-600 hover:shadow-xl hover:scale-105 transition-all duration-200 inline-block"
           >
-            Start Free Trial
-          </button>
+            Login
+          </a>
         </div>
       </section>
 
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

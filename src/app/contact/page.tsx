@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import {
-  Mail,
-  Phone,
-  MapPin,
   Send,
-  MessageSquare,
-  Clock,
   CheckCircle2,
+  HelpCircle,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -23,382 +19,300 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSuccess(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setIsSubmitting(false);
+      setIsSuccess(true);
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      }, 3000);
+    } catch (err: any) {
+      console.error("Error sending email:", err);
+      setError(err.message || "Failed to send message. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
-  const contactInfo = [
+  const faqs = [
     {
-      icon: Mail,
-      title: "Email Us",
-      details: "hello@orweza.ai",
-      description: "We'll respond within 24 hours",
+      question: "How quickly will I get a response?",
+      answer:
+        "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please mention it in your message subject.",
     },
     {
-      icon: Phone,
-      title: "Call Us",
-      details: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9am-6pm PST",
+      question: "What should I include in my message?",
+      answer:
+        "Please provide as much detail as possible about your inquiry, including your business type, expected call volume, and any specific features you're interested in. This helps us provide a more tailored response.",
     },
     {
-      icon: MapPin,
-      title: "Visit Us",
-      details: "123 Market Street, San Francisco, CA 94103",
-      description: "By appointment only",
+      question: "Can I schedule a demo?",
+      answer:
+        "Yes! Select 'Request a Demo' in the subject field, and our team will reach out to schedule a personalized demo at your convenience.",
     },
     {
-      icon: MessageSquare,
-      title: "Live Chat",
-      details: "Available 24/7",
-      description: "Get instant support",
+      question: "Do you offer technical support?",
+      answer:
+        "Absolutely. We provide technical support for all plans. Pro and Enterprise customers get priority support with faster response times. Choose 'Technical Support' in the subject field for technical issues.",
     },
-  ];
-
-  const officeHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM PST" },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM PST" },
-    { day: "Sunday", hours: "Closed" },
+    {
+      question: "What are your support hours?",
+      answer:
+        "Our support team is available Monday-Friday, 9:00 AM - 6:00 PM PST. Enterprise customers have access to 24/7 priority support.",
+    },
+    {
+      question: "Can I discuss partnership opportunities?",
+      answer:
+        "Yes! We're always open to exploring partnerships. Select 'Partnership Opportunity' in the subject field, and our business development team will get in touch.",
+    },
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 -z-10"></div>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="absolute inset-0 -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Get in <span className="text-gradient">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Have questions? We'd love to hear from you. Send us a message and we'll
             respond as soon as possible.
           </p>
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-gradient-soft rounded-2xl p-6 hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {info.title}
-                  </h3>
-                  <p className="text-primary-600 font-semibold mb-1">
-                    {info.details}
-                  </p>
-                  <p className="text-sm text-gray-600">{info.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      {/* Contact Form */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-3xl p-8 md:p-12 shadow-xl border border-gray-700 bg-gray-800">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Send Us a Message
+            </h2>
 
-      {/* Contact Form & Info */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Send Us a Message
-              </h2>
-
-              {isSuccess ? (
-                <div className="text-center py-12">
-                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-10 h-10 text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    Message Sent!
-                  </h3>
-                  <p className="text-gray-600">
-                    Thank you for contacting us. We'll get back to you soon.
-                  </p>
+            {isSuccess ? (
+              <div className="text-center py-12">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-green-600" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name */}
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Message Sent!
+                </h3>
+                <p className="text-gray-300">
+                  Thank you for contacting us. We'll get back to you soon.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-500/10 border border-red-500 text-red-400 px-4 py-3 rounded-lg">
+                    <p className="text-sm">{error}</p>
+                  </div>
+                )}
+
+                {/* Name */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
+                    placeholder="john@company.com"
+                  />
+                </div>
+
+                {/* Company & Phone */}
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      htmlFor="company"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Full Name *
+                      Company
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      required
-                      value={formData.name}
+                      id="company"
+                      value={formData.company}
                       onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
+                        setFormData({ ...formData, company: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
+                      placeholder="Acme Inc."
                     />
                   </div>
-
-                  {/* Email */}
                   <div>
                     <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-300 mb-2"
                     >
-                      Email Address *
+                      Phone
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
+                      type="tel"
+                      id="phone"
+                      value={formData.phone}
                       onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
+                        setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                      placeholder="john@company.com"
+                      className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
+                      placeholder="+1 (555) 123-4567"
                     />
                   </div>
-
-                  {/* Company & Phone */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="company"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) =>
-                          setFormData({ ...formData, company: e.target.value })
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                        placeholder="Acme Inc."
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-2"
-                      >
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
-                        }
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Subject */}
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      required
-                      value={formData.subject}
-                      onChange={(e) =>
-                        setFormData({ ...formData, subject: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="demo">Request a Demo</option>
-                      <option value="sales">Sales Inquiry</option>
-                      <option value="support">Technical Support</option>
-                      <option value="partnership">Partnership Opportunity</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
-                      placeholder="Tell us more about your needs..."
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-primary text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                  >
-                    <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                    <Send className="w-5 h-5" />
-                  </button>
-                </form>
-              )}
-            </div>
-
-            {/* Additional Info */}
-            <div className="space-y-8">
-              {/* Office Hours */}
-              <div className="bg-gradient-soft rounded-3xl p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    Office Hours
-                  </h3>
                 </div>
-                <div className="space-y-3">
-                  {officeHours.map((schedule, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center py-3 border-b border-gray-200 last:border-0"
-                    >
-                      <span className="font-medium text-gray-900">
-                        {schedule.day}
-                      </span>
-                      <span className="text-gray-600">{schedule.hours}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Quick Links */}
-              <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Quick Links
-                </h3>
-                <div className="space-y-4">
-                  <a
-                    href="/pricing"
-                    className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
+                {/* Subject */}
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-300 mb-2"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      View Pricing
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      Explore our plans and pricing
-                    </p>
-                  </a>
-                  <a
-                    href="/features"
-                    className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
+                    Subject *
+                  </label>
+                  <select
+                    id="subject"
+                    required
+                    value={formData.subject}
+                    onChange={(e) =>
+                      setFormData({ ...formData, subject: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all bg-gray-700 text-white"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Browse Features
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      See what Orweza can do for you
-                    </p>
-                  </a>
-                  <a
-                    href="#"
-                    className="block p-4 bg-gradient-soft rounded-xl hover:shadow-md transition-all duration-200"
-                  >
-                    <h4 className="font-semibold text-gray-900 mb-1">
-                      Help Center
-                    </h4>
-                    <p className="text-sm text-gray-600">
-                      Find answers to common questions
-                    </p>
-                  </a>
+                    <option value="">Select a subject</option>
+                    <option value="demo">Request a Demo</option>
+                    <option value="sales">Sales Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="partnership">Partnership Opportunity</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
-              </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-gray-200 rounded-3xl h-64 flex items-center justify-center overflow-hidden">
-                <div className="text-center p-8">
-                  <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                  <p className="text-gray-600 font-medium">
-                    123 Market Street
-                  </p>
-                  <p className="text-gray-500">San Francisco, CA 94103</p>
+                {/* Message */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none bg-gray-700 text-white"
+                    placeholder="Tell us more about your needs..."
+                  />
                 </div>
-              </div>
-            </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-primary text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                >
+                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                  <Send className="w-5 h-5" />
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Need Help Right Away?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Check out our help center for instant answers to common questions, or chat
-            with our support team.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
-            >
-              Visit Help Center
-            </a>
-            <a
-              href="#"
-              className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200"
-            >
-              Start Live Chat
-            </a>
+      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Frequently Asked <span className="text-gradient">Questions</span>
+            </h2>
+            <p className="text-gray-300">
+              Find answers to common questions about contacting our team
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <details
+                key={index}
+                className="group rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 bg-gray-800 border border-gray-700"
+              >
+                <summary className="flex items-center justify-between cursor-pointer list-none">
+                  <h3 className="text-lg font-semibold text-white pr-4">
+                    {faq.question}
+                  </h3>
+                  <HelpCircle className="w-5 h-5 text-primary-400 flex-shrink-0 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-gray-300 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

@@ -10,7 +10,9 @@
   }
 
   body {
-    @apply bg-white text-neutral-900 font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: rgb(17 24 39);
+    color: #e5e7eb;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -63,34 +65,49 @@
 @layer components {
   /* Button System - Primary */
   .btn-primary {
-    @apply px-8 py-4 bg-gradient-orweza text-white rounded-xl font-semibold text-base
-           shadow-orweza hover:shadow-orweza-lg hover:scale-[1.02]
+    @apply px-8 py-4 rounded-xl font-semibold text-base
+           shadow-md hover:shadow-lg hover:scale-[1.02]
            transition-all duration-300 ease-out
            focus:ring-4 focus:ring-primary-200 focus:outline-none
            active:scale-[0.98];
-    background-size: 200% 200%;
+    background-color: #3b7ef6;
+    color: #ffffff;
   }
 
   .btn-primary:hover {
-    background-position: right center;
+    background-color: #2563eb;
   }
 
   .btn-secondary {
-    @apply px-8 py-4 bg-white text-neutral-900 rounded-xl font-semibold text-base
-           border-2 border-neutral-200 hover:border-primary-300
-           hover:bg-neutral-50 shadow-md hover:shadow-lg
+    @apply px-8 py-4 rounded-xl font-semibold text-base
+           border-2 border-neutral-300 hover:border-primary-400
+           shadow-md hover:shadow-lg
            transition-all duration-200
            focus:ring-4 focus:ring-neutral-200 focus:outline-none
            active:scale-[0.98];
+    background-color: #f5f5f5;
+    color: #1e293b;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e5e5e5;
+    border-color: #3b7ef6;
   }
 
   .btn-outline {
     @apply px-8 py-4 bg-transparent rounded-xl font-semibold text-base
-           border-2 border-gradient text-primary-600
-           hover:bg-gradient-orweza hover:text-white hover:border-transparent
-           shadow-sm hover:shadow-orweza
+           border-2
+           shadow-sm hover:shadow-md
            transition-all duration-300
            focus:ring-4 focus:ring-primary-200 focus:outline-none;
+    color: #3b7ef6;
+    border-color: #3b7ef6;
+  }
+
+  .btn-outline:hover {
+    background: #3b7ef6;
+    color: #ffffff;
+    border-color: #3b7ef6;
   }
 
   .btn-ghost {
@@ -110,19 +127,20 @@
 
   /* Card System */
   .card {
-    @apply bg-white rounded-2xl shadow-elevation-2 hover:shadow-elevation-3
-           transition-all duration-300 border border-neutral-100
+    @apply rounded-2xl shadow-elevation-2 hover:shadow-elevation-3
+           transition-all duration-300 border border-neutral-200
            overflow-hidden;
+    background-color: #fafafa;
   }
 
   .card-interactive {
-    @apply card hover:scale-[1.02] hover:border-neutral-200
+    @apply card hover:scale-[1.02] hover:border-primary-300
            cursor-pointer;
   }
 
   .card-gradient {
     @apply card relative;
-    background: linear-gradient(135deg, rgba(59, 126, 246, 0.03) 0%, rgba(168, 85, 247, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(59, 126, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
   }
 
   .card-featured {
@@ -131,11 +149,13 @@
 
   /* Input System */
   .input {
-    @apply w-full px-4 py-3 rounded-xl border-2 border-neutral-200
-           bg-white text-neutral-900 placeholder:text-neutral-400
+    @apply w-full px-4 py-3 rounded-xl border-2 border-neutral-300
+           placeholder:text-neutral-400
            focus:border-primary-500 focus:ring-4 focus:ring-primary-100
-           hover:border-neutral-300
+           hover:border-neutral-400
            transition-all duration-200 outline-none;
+    background-color: #fafafa;
+    color: #1e293b;
   }
 
   .input-lg {
@@ -160,7 +180,9 @@
   }
 
   .badge-gradient {
-    @apply badge bg-gradient-orweza text-white shadow-glow-sm;
+    @apply badge shadow-glow-sm;
+    background-color: #3b7ef6;
+    color: #ffffff;
   }
 
   /* Section Containers */
@@ -181,12 +203,12 @@
   /* Orweza Brand Gradients */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #3b7ef6 0%, #6366f1 50%, #a855f7 100%);
+    background-image: linear-gradient(135deg, #3b7ef6 0%, #2563eb 100%);
   }
 
   .text-gradient-reverse {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #3b7ef6 100%);
+    background-image: linear-gradient(135deg, #2563eb 0%, #3b7ef6 100%);
   }
 
   .text-gradient-animated {
@@ -200,7 +222,7 @@
   }
 
   .bg-gradient-soft {
-    @apply bg-gradient-to-br from-primary-50 via-indigo-50 to-accent-50;
+    background: linear-gradient(135deg, rgba(59, 126, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
   }
 
   .bg-gradient-dark {
@@ -224,8 +246,10 @@
 
   /* Glass Morphism */
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-white/30;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    @apply backdrop-blur-xl border;
+    background-color: rgba(245, 245, 245, 0.9);
+    border-color: rgba(226, 232, 240, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(59, 126, 246, 0.1);
   }
 
   .glass-dark {
@@ -234,10 +258,11 @@
   }
 
   .glass-gradient {
-    @apply backdrop-blur-xl border border-white/20;
+    @apply backdrop-blur-xl border;
     background: linear-gradient(135deg,
-                rgba(255, 255, 255, 0.1) 0%,
-                rgba(255, 255, 255, 0.05) 100%);
+                rgba(245, 245, 245, 0.9) 0%,
+                rgba(229, 229, 229, 0.9) 100%);
+    border-color: rgba(226, 232, 240, 0.5);
   }
 
   /* Glow Effects */
@@ -267,22 +292,22 @@
   }
 
   .text-shadow-sm {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .text-shadow-md {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   }
 
   .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
   /* Gradient Borders */
   .border-gradient {
     border: 2px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, #3b7ef6, #6366f1, #a855f7) border-box;
+    background: linear-gradient(#f5f5f5, #f5f5f5) padding-box,
+                linear-gradient(135deg, #3b7ef6, #2563eb) border-box;
   }
 
   .border-gradient-rounded {
@@ -326,13 +351,13 @@
 
   /* Professional Patterns */
   .pattern-dots {
-    background-image: radial-gradient(circle, rgba(59, 126, 246, 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(59, 126, 246, 0.15) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 
   .pattern-grid {
-    background-image: linear-gradient(rgba(59, 126, 246, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(59, 126, 246, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
@@ -402,13 +427,13 @@ html {
 
 /* Selection styling with Orweza brand colors */
 ::selection {
-  background: rgba(59, 126, 246, 0.2);
-  color: #1e40af;
+  background: rgba(59, 126, 246, 0.3);
+  color: #1e293b;
 }
 
 ::-moz-selection {
-  background: rgba(59, 126, 246, 0.2);
-  color: #1e40af;
+  background: rgba(59, 126, 246, 0.3);
+  color: #1e293b;
 }
 
 /* Professional Scrollbar Styling */
@@ -423,14 +448,14 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b7ef6 0%, #6366f1 50%, #a855f7 100%);
+  background: linear-gradient(135deg, #3b7ef6 0%, #2563eb 100%);
   border-radius: 100px;
   border: 3px solid transparent;
   background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #9333ea 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   background-clip: padding-box;
   border: 2px solid transparent;
 }
@@ -442,7 +467,7 @@ html {
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #6366f1 #f1f5f9;
+  scrollbar-color: #3b7ef6 #f1f5f9;
 }
 
 /* Loading skeleton */
@@ -456,13 +481,13 @@ html {
 }
 
 .skeleton {
-  @apply bg-neutral-200 rounded-lg;
+  border-radius: 0.5rem;
   animation: shimmer 2s infinite linear;
   background: linear-gradient(
     to right,
-    #e2e8f0 4%,
-    #cbd5e1 25%,
-    #e2e8f0 36%
+    #524f4f 4%,
+    #625f5f 25%,
+    #524f4f 36%
   );
   background-size: 1000px 100%;
 }
