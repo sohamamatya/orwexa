@@ -7,9 +7,14 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Orweza - AI Voice Agent Platform",
-  description: "Automate phone calls, answer inquiries, and schedule appointments with Orweza's AI Voice Agent Platform.",
+  title: "Orwexa - AI Voice Agent Platform",
+  description: "Automate phone calls, answer inquiries, and schedule appointments with Orwexa's AI Voice Agent Platform.",
   keywords: ["AI", "voice agent", "phone automation", "customer service", "appointment scheduling"],
+  icons: {
+    icon: '/fav-icon.png',
+    shortcut: '/fav-icon.png',
+    apple: '/fav-icon.png',
+  },
 };
 
 export default function RootLayout({
