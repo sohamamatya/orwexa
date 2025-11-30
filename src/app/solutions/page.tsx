@@ -141,7 +141,7 @@ export default function SolutionsPage() {
   return (
     <>
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="relative pt-24 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Built for every business that <span className="text-gradient">runs on conversations.</span>

@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       {/* HERO SECTION - Modern Full-Height */}
-      <section className="relative py-10 md:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="relative pt-24 pb-10 md:pt-24 md:pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         {/* Animated Background Elements */}
         <div className="absolute inset-0 -z-10 pattern-dots opacity-30"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500 rounded-full filter blur-3xl opacity-10 -z-10 animate-pulse-slow"></div>

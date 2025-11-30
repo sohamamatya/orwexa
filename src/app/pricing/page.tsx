@@ -151,7 +151,7 @@ export default function PricingPage() {
   return (
     <>
       {/* Hero Section - Compact */}
-      <section className="relative min-h-[40vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-12" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="relative min-h-[40vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-24" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto w-full text-center py-8">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-3 py-1 mb-4">
