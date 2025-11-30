@@ -644,7 +644,11 @@ export default function Home() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 pt-6 border-t border-gray-700">
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">No credit card required</span>
+                  <span className="text-sm">14 days Free trial</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400">
+                  <CheckCircle2 className="w-4 h-4 text-green-400" />
+                  <span className="text-sm">Free $10 credit</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />

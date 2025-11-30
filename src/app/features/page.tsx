@@ -722,11 +722,15 @@ export default function FeaturesPage() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-8 border-t border-gray-700">
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-5 h-5 text-green-400" />
-                  <span>Setup in 15 minutes</span>
+                  <span>14 days Free trial</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-5 h-5 text-green-400" />
-                  <span>No credit card required</span>
+                  <span>Free $10 credit</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-400">
+                  <CheckCircle2 className="w-5 h-5 text-green-400" />
+                  <span>Setup in 15 minutes</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-5 h-5 text-green-400" />
