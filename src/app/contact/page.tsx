@@ -65,48 +65,81 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      question: "How quickly will I get a response?",
+      question: "What is Orwexa?",
       answer:
-        "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please mention it in your message subject.",
+        "Orwexa is an AI-powered voice platform that automates inbound and outbound calls. It answers calls, books appointments, follows up with leads, and integrates with your tools — helping businesses convert more calls into customers.",
     },
     {
-      question: "What should I include in my message?",
+      question: "Do I need to install anything?",
       answer:
-        "Please provide as much detail as possible about your inquiry, including your business type, expected call volume, and any specific features you're interested in. This helps us provide a more tailored response.",
+        "No. Orwexa is 100% cloud-based. You can access it securely from any device through your web browser.",
     },
     {
-      question: "Can I schedule a demo?",
+      question: "Can I use Orwexa for Sales Calls?",
       answer:
-        "Yes! Select 'Request a Demo' in the subject field, and our team will reach out to schedule a personalized demo at your convenience.",
+        "Absolutely. Orwexa is designed to enhance sales efficiency by providing AI agents that engage leads, answer questions, qualify prospects, and book appointments.",
     },
     {
-      question: "Do you offer technical support?",
+      question: "Can I use Orwexa for my local business?",
       answer:
-        "Absolutely. We provide technical support for all plans. Pro and Enterprise customers get priority support with faster response times. Choose 'Technical Support' in the subject field for technical issues.",
+        "Yes! Orwexa fits any local business that depends on calls, appointments, or leads. From real estate to clinics, salons, and trades, our AI agents handle your calls, bookings, and follow-ups automatically.",
     },
     {
-      question: "What are your support hours?",
+      question: "What are AI Voice Assistants?",
       answer:
-        "Our support team is available Monday-Friday, 9:00 AM - 6:00 PM PST. Enterprise customers have access to 24/7 priority support.",
+        "AI Voice Assistants are smart, natural-sounding agents that answer calls, schedule appointments, follow up with leads, and handle repetitive customer interactions — just like a real receptionist would.",
     },
     {
-      question: "Can I discuss partnership opportunities?",
+      question: "Can Orwexa book appointments?",
       answer:
-        "Yes! We're always open to exploring partnerships. Select 'Partnership Opportunity' in the subject field, and our business development team will get in touch.",
+        "Yes. Orwexa integrates with Google Calendar to check availability, schedule meetings, and send confirmations automatically.",
+    },
+    {
+      question: "What's included in the monthly fee?",
+      answer:
+        "Your subscription covers AI agents, user accounts, features listed in your plan, and all software updates. Call minutes are billed separately at your plan's per-minute rate.",
+    },
+    {
+      question: "Is there a free trial?",
+      answer:
+        "Yes. Every plan includes a 7-day free trial and $10 call credit. You'll get full access to all features during this time.",
+    },
+    {
+      question: "How does call billing work?",
+      answer:
+        "Orwexa bills calls per 60 seconds based on your plan's rate. On the Starter plan, calls cost $0.39 per minute; on the Pro plan, they cost $0.29 per minute; and on the Enterprise plan, the rate is $0.19 per minute.",
+    },
+    {
+      question: "Can I switch plans later?",
+      answer:
+        "Yes. You can upgrade or downgrade anytime. Changes take effect immediately, and adjustments are prorated automatically.",
+    },
+    {
+      question: "Can I cancel anytime?",
+      answer:
+        "Yes. There are no long-term contracts (unless you're on a custom enterprise plan). You can cancel your subscription directly from your account dashboard.",
+    },
+    {
+      question: "What is Orwexa's refund policy?",
+      answer:
+        "Orwexa offers clear and transparent subscription terms:\n\n• No Refund Policy: Orwexa subscriptions are non-refundable. We offer free trials and transparent billing to help you evaluate the platform fully before committing.\n\n• Free Trial & Commitment: Both the Starter and Pro plans include a risk-free 7-day trial. You won't be charged if you cancel your subscription anytime during the trial period.\n\n• Subscription Changes: You can upgrade, downgrade, or cancel your subscription at any time. Changes take immediate effect with prorated adjustments. However, refunds for partial subscription periods are not available.\n\nWe recommend carefully evaluating the platform during your trial to ensure it meets your needs before proceeding with payment.",
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer:
+        "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and ACH transfers for Enterprise customers.",
     },
   ];
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="absolute inset-0 -z-10"></div>
-
+      <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Get in <span className="text-gradient">Touch</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-6">
             Have questions? We'd love to hear from you. Send us a message and we'll
             respond as soon as possible.
           </p>
@@ -114,27 +147,27 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-3xl mx-auto">
-          <div className="rounded-3xl p-8 md:p-12 shadow-xl border border-gray-700 bg-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-6">
+          <div className="rounded-xl p-6 md:p-8 shadow-xl border border-gray-700 bg-gray-800">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Send Us a Message
             </h2>
 
             {isSuccess ? (
-              <div className="text-center py-12">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-green-600" />
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-2">
                   Message Sent!
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-sm">
                   Thank you for contacting us. We'll get back to you soon.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Error Message */}
                 {error && (
                   <div className="bg-red-500/10 border border-red-500 text-red-400 px-4 py-3 rounded-lg">
@@ -275,10 +308,10 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-primary text-white py-4 px-6 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-primary text-white py-3 px-6 rounded-lg font-semibold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4" />
                 </button>
               </form>
             )}
@@ -287,15 +320,14 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Frequently Asked <span className="text-gradient">Questions</span>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+              Frequently asked
+              <span className="block text-gradient mt-1">questions</span>
             </h2>
-            <p className="text-gray-300">
-              Find answers to common questions about contacting our team
-            </p>
+            <p className="text-base text-gray-400">Everything you need to know</p>
           </div>
 
           <div className="space-y-4">

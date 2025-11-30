@@ -141,34 +141,30 @@ export default function SolutionsPage() {
   return (
     <>
       {/* SECTION 1 — HERO */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="absolute inset-0 -z-10"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
-
+      <section className="relative pt-12 pb-8 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Built for every business that <span className="text-gradient">runs on conversations.</span>
           </h1>
 
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base md:text-lg text-gray-300 mb-6 leading-relaxed max-w-3xl mx-auto">
             From real estate and clinics to marketing agencies and recruitment firms — Orwexa makes
             sure every call is answered, every lead followed up, and every opportunity booked.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="https://app.orwexa.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2"
+              className="group px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center justify-center space-x-2"
             >
               <span>Login</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
               href="/pricing"
-              className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
+              className="px-6 py-3 bg-gray-800 text-white rounded-xl font-semibold text-sm hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
             >
               Get Started
             </Link>
@@ -177,47 +173,47 @@ export default function SolutionsPage() {
       </section>
 
       {/* SECTION 2 — INDUSTRY SOLUTIONS GRID */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Solutions that fit <span className="text-gradient">the way you work.</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {solutions.map((solution, index) => {
               const Icon = solution.icon;
               return (
                 <div
                   key={index}
-                  className="bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-300 flex flex-col"
+                  className="bg-gray-800 rounded-xl p-5 border border-gray-700 hover:border-primary-500 transition-all duration-300 flex flex-col"
                 >
-                  <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-lg font-bold text-white mb-2">
                     {solution.title}
                   </h3>
 
                   {solution.subtitle && (
-                    <p className="text-sm text-gray-400 mb-4">{solution.subtitle}</p>
+                    <p className="text-xs text-gray-400 mb-3">{solution.subtitle}</p>
                   )}
 
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
                     {solution.description}
                   </p>
 
                   <div className="mt-auto">
-                    <p className="text-sm font-semibold text-primary-400 mb-3">
+                    <p className="text-xs font-semibold text-primary-400 mb-2">
                       Highlights:
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1.5">
                       {solution.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-start space-x-2">
-                          <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-gray-300">{highlight}</span>
+                          <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-gray-300">{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -230,33 +226,33 @@ export default function SolutionsPage() {
       </section>
 
       {/* SECTION 3 — GLOBAL ADVANTAGE */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Voices that fit <span className="text-gradient">your market.</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Orwexa speaks your customer's language — literally. With multiple voices, accents,
               and time-zone scheduling, your business sounds local anywhere in the world.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {globalFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={index}
-                  className="bg-gradient-soft rounded-2xl p-6 border border-gray-700 text-center hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-soft rounded-xl p-4 border border-gray-700 text-center hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-white mb-1.5">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-300">{feature.description}</p>
+                  <p className="text-xs text-gray-300">{feature.description}</p>
                 </div>
               );
             })}
@@ -265,53 +261,53 @@ export default function SolutionsPage() {
       </section>
 
       {/* SECTION 4 — RESULTS */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               What our <span className="text-gradient">users see.</span>
             </h2>
           </div>
 
           {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-4 mb-6">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-gradient-primary rounded-2xl p-8 text-center"
+                className="bg-gradient-primary rounded-xl p-4 text-center"
               >
-                <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-                  <div className="text-5xl font-bold text-gradient mb-2">
+                <div className="bg-gray-800 rounded-lg p-5 border border-gray-700">
+                  <div className="text-3xl font-bold text-gradient mb-1">
                     {stat.value}
                   </div>
-                  <p className="text-white font-medium">{stat.label}</p>
+                  <p className="text-white font-medium text-sm">{stat.label}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Testimonials */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gray-800 rounded-2xl p-8 border border-gray-700"
+                className="bg-gray-800 rounded-xl p-5 border border-gray-700"
               >
-                <div className="flex items-center space-x-1 mb-4">
+                <div className="flex items-center space-x-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                    <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed italic">
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed italic">
                   "{testimonial.quote}"
                 </p>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {testimonial.initial}
                   </div>
                   <div>
-                    <div className="text-white font-semibold">{testimonial.author}</div>
-                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                    <div className="text-white font-semibold text-sm">{testimonial.author}</div>
+                    <div className="text-xs text-gray-400">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
@@ -321,27 +317,27 @@ export default function SolutionsPage() {
       </section>
 
       {/* SECTION 5 — FINAL CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-8 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Let Orwexa handle the calls. <span className="text-gradient">You handle the results.</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-base md:text-lg text-gray-300 mb-6">
             Start your 7-day free trial, get $10 free credit, and let Orwexa answer, follow up,
             and book clients for your business.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="https://app.orwexa.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+              className="px-6 py-3 bg-gradient-primary text-white rounded-xl font-semibold text-sm hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
               Login
             </a>
             <Link
               href="/pricing"
-              className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold text-lg hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
+              className="px-6 py-3 bg-gray-800 text-white rounded-xl font-semibold text-sm hover:bg-gray-700 border-2 border-gray-600 transition-all duration-200 flex items-center justify-center"
             >
               Get Started
             </Link>

@@ -150,53 +150,48 @@ export default function PricingPage() {
 
   return (
     <>
-      {/* Hero Section - Modern */}
-      <section className="relative min-h-[70vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        {/* Animated Background */}
-        <div className="absolute inset-0 -z-10 pattern-dots opacity-30"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-500 rounded-full filter blur-3xl opacity-10 -z-10 animate-pulse-slow"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-500 rounded-full filter blur-3xl opacity-10 -z-10 animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-
-        <div className="max-w-7xl mx-auto w-full text-center py-20">
+      {/* Hero Section - Compact */}
+      <section className="relative min-h-[40vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-12" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="max-w-7xl mx-auto w-full text-center py-8">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-6 py-3 mb-8 animate-fade-in-down">
-            <Sparkles className="w-5 h-5 text-primary-400" />
-            <span className="text-base font-medium text-primary-300">Simple, Transparent Pricing</span>
+          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-3 py-1 mb-4">
+            <Sparkles className="w-3 h-3 text-primary-400" />
+            <span className="text-xs font-medium text-primary-300">Simple, Transparent Pricing</span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight animate-fade-in-up">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Choose your
-            <span className="block text-gradient mt-2">perfect plan</span>
+            <span className="block text-gradient mt-1">perfect plan</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up" style={{animationDelay: '200ms'}}>
+          <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
             Start with a 7-day free trial + $10 credit. No credit card required.
           </p>
 
           {/* Trust Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up" style={{animationDelay: '400ms'}}>
-            <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-6 py-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span className="text-gray-300">7-day free trial</span>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="flex items-center space-x-1.5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-1.5">
+              <Check className="w-3.5 h-3.5 text-green-400" />
+              <span className="text-gray-300 text-xs">7-day free trial</span>
             </div>
-            <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-6 py-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span className="text-gray-300">$10 free credit</span>
+            <div className="flex items-center space-x-1.5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-1.5">
+              <Check className="w-3.5 h-3.5 text-green-400" />
+              <span className="text-gray-300 text-xs">$10 free credit</span>
             </div>
-            <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-6 py-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span className="text-gray-300">No credit card needed</span>
+            <div className="flex items-center space-x-1.5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-3 py-1.5">
+              <Check className="w-3.5 h-3.5 text-green-400" />
+              <span className="text-gray-300 text-xs">No credit card needed</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4">
             {pricingPlans.map((plan, index) => (
               <PricingCard key={index} {...plan} />
             ))}
@@ -205,14 +200,14 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Summary Table */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
               Pricing
-              <span className="block text-gradient mt-2">summary</span>
+              <span className="block text-gradient mt-1">summary</span>
             </h2>
-            <p className="text-xl text-gray-400">Compare our plans at a glance</p>
+            <p className="text-base text-gray-400">Compare our plans at a glance</p>
           </div>
 
           <div className="overflow-x-auto">
@@ -250,101 +245,15 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Feature Comparison */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Compare
-              <span className="block text-gradient mt-2">all features</span>
-            </h2>
-            <p className="text-xl text-gray-400">See what's included in each plan</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-gray-600">
-                  <th className="text-left py-4 px-4 font-semibold text-white">
-                    Feature
-                  </th>
-                  <th className="text-center py-4 px-4 font-semibold text-white">
-                    Starter
-                  </th>
-                  <th className="text-center py-4 px-4 font-semibold text-white">
-                    Pro
-                  </th>
-                  <th className="text-center py-4 px-4 font-semibold text-white">
-                    Enterprise
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { feature: "AI Voice Agents", starter: "1", pro: "5", enterprise: "Unlimited" },
-                  { feature: "Users", starter: "1", pro: "5", enterprise: "Unlimited" },
-                  { feature: "Calendar Integration", starter: "Calendar booking", pro: "Multi-calendar", enterprise: "Multi-calendar & routing" },
-                  { feature: "Scheduling", starter: "Real-time scheduling", pro: "Real-time scheduling", enterprise: "Full onboarding & scheduling setup" },
-                  { feature: "Campaigns", starter: "Campaign Manager", pro: "Advanced Campaigns", enterprise: "Advanced Campaigns + Automation" },
-                  { feature: "CRM & Integrations", starter: "Basic CRM integration", pro: "CRM & API integrations", enterprise: "Custom integrations (CRM, ERP, tools)" },
-                  { feature: "Voice & Accents", starter: "Standard voices (ElevenLabs)", pro: "Custom voices & accents", enterprise: "Multi-language voice options" },
-                  { feature: "Analytics & Reporting", starter: "Basic analytics", pro: "Analytics & reports", enterprise: "Advanced analytics suite" },
-                  { feature: "Messaging", starter: "Unlimited SMS & WhatsApp", pro: "Unlimited SMS & WhatsApp", enterprise: "Unlimited SMS & WhatsApp" },
-                  { feature: "Support", starter: "Email support", pro: "24/7 email + chat support", enterprise: "Dedicated manager + priority support" },
-                  { feature: "Extras / Infrastructure", starter: "Call recording & transcripts", pro: "Connect Twilio / Telynx", enterprise: "SLA 99.9% uptime · Private hosting · Compliance" },
-                ].map((row, index) => (
-                  <tr key={index} className="border-b border-gray-700">
-                    <td className="py-4 px-4 text-gray-200">{row.feature}</td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.starter === "boolean" ? (
-                        row.starter ? (
-                          <Check className="w-5 h-5 text-green-500 mx-auto" />
-                        ) : (
-                          <span className="text-gray-300">-</span>
-                        )
-                      ) : (
-                        <span className="text-gray-200">{row.starter}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.pro === "boolean" ? (
-                        row.pro ? (
-                          <Check className="w-5 h-5 text-green-500 mx-auto" />
-                        ) : (
-                          <span className="text-gray-300">-</span>
-                        )
-                      ) : (
-                        <span className="text-gray-200">{row.pro}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.enterprise === "boolean" ? (
-                        row.enterprise ? (
-                          <Check className="w-5 h-5 text-green-500 mx-auto" />
-                        ) : (
-                          <span className="text-gray-300">-</span>
-                        )
-                      ) : (
-                        <span className="text-gray-200">{row.enterprise}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
+      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
               Frequently asked
-              <span className="block text-gradient mt-2">questions</span>
+              <span className="block text-gradient mt-1">questions</span>
             </h2>
-            <p className="text-xl text-gray-400">Everything you need to know</p>
+            <p className="text-base text-gray-400">Everything you need to know</p>
           </div>
 
           <div className="space-y-4">
@@ -366,50 +275,48 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* CTA Section - Modern */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-500 rounded-full filter blur-3xl opacity-10 -z-10 animate-pulse-slow"></div>
-
+      {/* CTA Section - Compact */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-5xl mx-auto">
-          <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] p-12 md:p-16 border-2 border-gray-700 shadow-orweza-lg">
+          <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 md:p-10 border border-gray-700 shadow-orweza-lg">
             <div className="text-center">
               {/* Badge */}
-              <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-8">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-green-400">Start your free trial</span>
+              <div className="inline-flex items-center space-x-2 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1 mb-4">
+                <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-xs font-medium text-green-400">Start your free trial</span>
               </div>
 
-              <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                 Ready to transform
-                <span className="block text-gradient mt-2">your business?</span>
+                <span className="block text-gradient mt-1">your business?</span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Join 500+ businesses using Orwexa. Start your 7-day free trial with $10 credit today.
+              <p className="text-base md:text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
+                Join 10+ businesses using Orwexa. Start your 7-day free trial with $10 credit today.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
                 <a
                   href="https://app.orwexa.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-12 py-6 bg-gradient-primary text-white rounded-2xl font-bold text-xl hover:shadow-glow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
+                  className="px-8 py-3 bg-gradient-primary text-white rounded-xl font-bold text-sm hover:shadow-glow-lg hover:scale-105 transition-all duration-300 inline-flex items-center justify-center"
                 >
                   Start Free Trial
                 </a>
               </div>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-8 border-t border-gray-700">
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Check className="w-5 h-5 text-green-400" />
-                  <span>7-day free trial</span>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4 border-t border-gray-700">
+                <div className="flex items-center space-x-1.5 text-gray-400">
+                  <Check className="w-4 h-4 text-green-400" />
+                  <span className="text-xs">7-day free trial</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Check className="w-5 h-5 text-green-400" />
-                  <span>$10 free credit</span>
+                <div className="flex items-center space-x-1.5 text-gray-400">
+                  <Check className="w-4 h-4 text-green-400" />
+                  <span className="text-xs">$10 free credit</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Check className="w-5 h-5 text-green-400" />
-                  <span>Cancel anytime</span>
+                <div className="flex items-center space-x-1.5 text-gray-400">
+                  <Check className="w-4 h-4 text-green-400" />
+                  <span className="text-xs">Cancel anytime</span>
                 </div>
               </div>
             </div>
