@@ -65,7 +65,7 @@ export default function PricingPage() {
         "Unlimited AI Agents",
         "Unlimited Users",
         "Dedicated account manager",
-        "Multi-language voice options",
+        "AI voice cloning",
         "Full onboarding & setup",
         "Custom integrations (CRM, ERP, tools)",
         "Priority routing & support",
@@ -164,11 +164,6 @@ export default function PricingPage() {
             Choose your
             <span className="block text-gradient mt-1">perfect plan</span>
           </h1>
-
-          {/* Subheading */}
-          <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            Start with a 7-day free trial + $10 credit. No credit card required.
-          </p>
 
           {/* Trust Pills */}
           <div className="flex flex-wrap items-center justify-center gap-2">

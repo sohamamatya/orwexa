@@ -145,19 +145,6 @@ export default function FeaturesPage() {
         "API access",
       ],
     },
-    {
-      icon: Users,
-      title: "Team Management",
-      description: "Invite teammates, assign agents, and monitor performance across your team.",
-      color: "green",
-      features: [
-        "Role-based access control",
-        "Team usage tracking",
-        "Agent-level analytics",
-        "Shared calendars",
-        "Call log sharing",
-      ],
-    },
   ];
 
   const quickStats = [
@@ -172,50 +159,32 @@ export default function FeaturesPage() {
       {/* HERO SECTION */}
       <section className="relative min-h-[40vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-24" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto w-full text-center py-8">
-          <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-3 py-1 mb-4">
-            <Sparkles className="w-3 h-3 text-primary-400" />
-            <span className="text-xs font-medium text-primary-300">Complete AI Call Platform</span>
-          </div>
-
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            Features built for
-            <span className="block text-gradient mt-1">real businesses</span>
+            Your AI receptionist AND your AI sales caller — in one platform
           </h1>
 
           <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-            Everything you need to answer calls, follow up leads, and book customers automatically — all in one powerful platform.
+            Everything inside Orwexa is built to answer calls, follow up leads, and book real customers — automatically.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
             <Link
               href="/pricing"
               className="group px-6 py-3 bg-gradient-primary text-white rounded-xl font-bold text-sm hover:shadow-glow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
             >
-              <span>Start Free Trial</span>
+              <span>Get Started</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
-            <a
-              href="https://app.orwexa.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl font-bold text-sm hover:bg-gray-700/50 border-2 border-gray-600/50 transition-all duration-300 flex items-center justify-center"
-            >
-              Sign In
-            </a>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mt-8">
-            {quickStats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-3 text-center">
-                  <Icon className="w-5 h-5 text-primary-400 mx-auto mb-2" />
-                  <div className="text-xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-xs text-gray-400">{stat.label}</div>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center space-x-2 text-gray-400">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
+                <span className="text-sm">7-Day Free Trial</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-400">
+                <CheckCircle2 className="w-4 h-4 text-green-400" />
+                <span className="text-sm">$10 credit</span>
+              </div>
             </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -331,47 +300,31 @@ export default function FeaturesPage() {
           <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 md:p-10 border border-gray-700 shadow-orweza-lg">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                Ready to transform your
-                <span className="block text-gradient mt-1">call handling?</span>
+                Start using Orwexa today.
               </h2>
               <p className="text-base md:text-lg text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-                Join 10+ businesses using Orwexa to answer every call, follow up every lead, and book more appointments automatically.
+                All the power of a 24/7 AI receptionist — none of the overhead. Start your free trial and let Orwexa handle your next call.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
                 <Link
                   href="/pricing"
-                  className="group px-8 py-3 bg-gradient-primary text-white rounded-xl font-bold text-sm hover:shadow-glow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                  className="group px-8 py-4 bg-gradient-primary text-white rounded-2xl font-bold text-base hover:shadow-glow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3"
                 >
-                  <span>Start Free Trial</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  <span>Get Started</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <a
-                  href="https://app.orwexa.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl font-bold text-sm hover:bg-gray-700/50 border-2 border-gray-600/50 transition-all duration-300 flex items-center justify-center"
-                >
-                  Sign In
-                </a>
               </div>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4 border-t border-gray-700">
-                <div className="flex items-center space-x-1.5 text-gray-400">
+              {/* Trial Info */}
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-xs">14 days Free trial</span>
+                  <span>7-Day Free Trial</span>
                 </div>
-                <div className="flex items-center space-x-1.5 text-gray-400">
+                <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-xs">Free $10 credit</span>
-                </div>
-                <div className="flex items-center space-x-1.5 text-gray-400">
-                  <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-xs">Setup in 15 minutes</span>
-                </div>
-                <div className="flex items-center space-x-1.5 text-gray-400">
-                  <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-xs">Cancel anytime</span>
+                  <span>$10 Free Credit</span>
                 </div>
               </div>
             </div>

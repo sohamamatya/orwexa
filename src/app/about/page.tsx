@@ -107,7 +107,7 @@ export default function AboutPage() {
                       <div className="text-xs text-gray-400">Always On</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl md:text-3xl font-bold text-green-400 mb-1">96%</div>
+                      <div className="text-2xl md:text-3xl font-bold text-green-400 mb-1">94%</div>
                       <div className="text-xs text-gray-400">Success Rate</div>
                     </div>
                   </div>

@@ -117,26 +117,6 @@ export default function SolutionsPage() {
     { value: "80%", label: "fewer missed calls" },
   ];
 
-  const testimonials = [
-    {
-      quote: "Every lead gets a call back — day or night.",
-      author: "Sofia",
-      role: "Recruiter",
-      initial: "S",
-    },
-    {
-      quote: "Our agency's demo bookings doubled in two weeks.",
-      author: "Ben",
-      role: "Marketing Director",
-      initial: "B",
-    },
-    {
-      quote: "My education consultancy finally runs follow-ups automatically.",
-      author: "Priya",
-      role: "EduConsult Founder",
-      initial: "P",
-    },
-  ];
 
   return (
     <>
@@ -286,33 +266,6 @@ export default function SolutionsPage() {
             ))}
           </div>
 
-          {/* Testimonials */}
-          <div className="grid md:grid-cols-3 gap-4">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-gray-800 rounded-xl p-5 border border-gray-700"
-              >
-                <div className="flex items-center space-x-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                    {testimonial.initial}
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold text-sm">{testimonial.author}</div>
-                    <div className="text-xs text-gray-400">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

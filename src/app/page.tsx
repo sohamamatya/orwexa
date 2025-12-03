@@ -305,24 +305,21 @@ export default function Home() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-white mb-2">Connect</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                    Link your phone number and calendar. Use your existing number or get a new one from us.
-                  </p>
+                  <h3 className="text-xl font-bold text-white mb-3">Connect</h3>
 
                   {/* Features */}
                   <div className="space-y-1.5">
                     <div className="flex items-center space-x-2 text-gray-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>
-                      <span className="text-sm">Number porting</span>
+                      <span className="text-sm">Call forwarding from your existing number</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>
-                      <span className="text-sm">Calendar sync</span>
+                      <span className="text-sm">Get a dedicated AI number</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-indigo-400"></div>
-                      <span className="text-sm">CRM integration</span>
+                      <span className="text-sm">Make inbound/outbound calls from your AI line</span>
                     </div>
                   </div>
                 </div>
@@ -415,7 +412,7 @@ export default function Home() {
           </div>
 
           {/* Key Metrics */}
-          <div className="grid md:grid-cols-4 gap-3 mb-6">
+          <div className="grid md:grid-cols-3 gap-3 mb-6">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center hover:border-green-500/50 transition-all duration-300 hover:shadow-glow-md">
               <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
                 <CheckCircle2 className="w-6 h-6 text-green-400" />
@@ -430,14 +427,6 @@ export default function Home() {
               </div>
               <div className="text-2xl font-bold text-white mb-1">&lt;30s</div>
               <p className="text-gray-400 text-xs">Response Time</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center hover:border-accent-500/50 transition-all duration-300 hover:shadow-glow-md">
-              <div className="w-12 h-12 bg-accent-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calendar className="w-6 h-6 text-accent-400" />
-              </div>
-              <div className="text-2xl font-bold text-white mb-1">100%</div>
-              <p className="text-gray-400 text-xs">Calendar Synced</p>
             </div>
 
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 border border-gray-700 text-center hover:border-primary-500/50 transition-all duration-300 hover:shadow-glow-md">
