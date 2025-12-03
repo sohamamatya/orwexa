@@ -49,7 +49,7 @@ export default function PricingCard({
       style={{
         backgroundColor: selected 
           ? 'rgba(59, 126, 246, 0.1)' 
-          : 'rgba(31, 41, 55, 0.8)', // gray-800 with transparency
+          : 'rgba(30, 41, 59, 0.9)', // slate-800 with blue tint
         boxShadow: selected 
           ? '0 0 30px rgba(59, 126, 246, 0.3), 0 10px 40px rgba(37, 99, 235, 0.2)' 
           : undefined

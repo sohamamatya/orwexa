@@ -201,52 +201,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Summary Table */}
-      <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
-              Pricing
-              <span className="block text-gradient mt-1">summary</span>
-            </h2>
-            <p className="text-base text-gray-400">Compare our plans at a glance</p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full bg-gray-800 rounded-2xl border border-gray-700">
-              <thead>
-                <tr className="border-b-2 border-gray-600">
-                  <th className="text-left py-4 px-6 font-semibold text-white">Plan</th>
-                  <th className="text-center py-4 px-6 font-semibold text-white">Monthly Fee</th>
-                  <th className="text-center py-4 px-6 font-semibold text-white">Call Cost</th>
-                  <th className="text-center py-4 px-6 font-semibold text-white">Billing</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-700">
-                  <td className="py-4 px-6 text-white font-medium">Starter</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$49 AUD / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.59 AUD / min</td>
-                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
-                </tr>
-                <tr className="border-b border-gray-700 bg-primary-500/10">
-                  <td className="py-4 px-6 text-white font-medium">Pro</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$249 AUD / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.49 AUD / min</td>
-                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 text-white font-medium">Enterprise</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$999 AUD / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.29 AUD / min</td>
-                  <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-6 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-4xl mx-auto">
