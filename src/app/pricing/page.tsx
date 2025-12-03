@@ -8,9 +8,9 @@ export default function PricingPage() {
   const pricingPlans = [
     {
       title: "Starter",
-      price: "$29",
+      price: "$49 AUD",
       period: "/month",
-      callCost: "$0.39 / min",
+      callCost: "$0.59 AUD / min",
       billing: "Billed per 60 seconds",
       description: "Perfect for small businesses getting started with AI voice",
       features: [
@@ -32,9 +32,9 @@ export default function PricingPage() {
     },
     {
       title: "Pro",
-      price: "$99",
+      price: "$249 AUD",
       period: "/month",
-      callCost: "$0.29 / min",
+      callCost: "$0.49 AUD / min",
       billing: "Billed per 60 seconds",
       description: "For growing businesses that need more power and flexibility",
       features: [
@@ -56,9 +56,9 @@ export default function PricingPage() {
     },
     {
       title: "Enterprise / Custom",
-      price: "$499",
+      price: "$999 AUD",
       period: "/month",
-      callCost: "$0.19 / min",
+      callCost: "$0.29 AUD / min",
       billing: "Billed per 60 seconds",
       description: "Tailored solutions for large organizations with unique needs",
       features: [
@@ -124,7 +124,7 @@ export default function PricingPage() {
     {
       question: "How does call billing work?",
       answer:
-        "Orwexa bills calls per 60 seconds based on your plan's rate. On the Starter plan, calls cost $0.39 per minute; on the Pro plan, they cost $0.29 per minute; and on the Enterprise plan, the rate is $0.19 per minute.",
+        "Orwexa bills calls per 60 seconds based on your plan's rate. On the Starter plan, calls cost $0.59 AUD per minute; on the Pro plan, they cost $0.49 AUD per minute; and on the Enterprise plan, the rate is $0.29 AUD per minute.",
     },
     {
       question: "Can I switch plans later?",
@@ -223,20 +223,20 @@ export default function PricingPage() {
               <tbody>
                 <tr className="border-b border-gray-700">
                   <td className="py-4 px-6 text-white font-medium">Starter</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$29 / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.39 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$49 AUD / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.59 AUD / min</td>
                   <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
                 </tr>
                 <tr className="border-b border-gray-700 bg-primary-500/10">
                   <td className="py-4 px-6 text-white font-medium">Pro</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$99 / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.29 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$249 AUD / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.49 AUD / min</td>
                   <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
                 </tr>
                 <tr>
                   <td className="py-4 px-6 text-white font-medium">Enterprise</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$499 / month</td>
-                  <td className="py-4 px-6 text-center text-gray-300">$0.19 / min</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$999 AUD / month</td>
+                  <td className="py-4 px-6 text-center text-gray-300">$0.29 AUD / min</td>
                   <td className="py-4 px-6 text-center text-gray-300">Billed per 60 seconds</td>
                 </tr>
               </tbody>

@@ -75,40 +75,21 @@ export default function Home() {
 
             </div>
 
-            {/* Right Column - Video & Stats */}
-            <div className="relative space-y-3 animate-fade-in-up" style={{animationDelay: '200ms'}}>
-              {/* Video */}
-              <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-orweza-lg border border-gray-700/50 bg-gray-800">
-                <iframe
-                  src="https://www.youtube.com/embed/fWmm3KgiA-w"
-                  title="Orwexa Live Demo"
-                  frameBorder="0"
-                  allowFullScreen
-                  className="w-full h-full"
-                ></iframe>
-              </div>
-
+            {/* Right Column - Stats */}
+            <div className="relative animate-fade-in-up" style={{animationDelay: '200ms'}}>
               {/* Quick Stats Grid */}
-              <div className="grid grid-cols-3 gap-2">
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-2 text-center">
-                  <div className="text-xl font-bold text-green-400">96%</div>
-                  <div className="text-xs text-gray-400 mt-0.5">Answer Rate</div>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 text-center">
+                  <div className="text-2xl font-bold text-green-400">96%</div>
+                  <div className="text-xs text-gray-400 mt-1">Answer Rate</div>
                 </div>
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-2 text-center">
-                  <div className="text-xl font-bold text-primary-400">24/7</div>
-                  <div className="text-xs text-gray-400 mt-0.5">Always On</div>
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 text-center">
+                  <div className="text-2xl font-bold text-primary-400">24/7</div>
+                  <div className="text-xs text-gray-400 mt-1">Always On</div>
                 </div>
-                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg p-2 text-center">
-                  <div className="text-xl font-bold text-accent-400">&lt;30s</div>
-                  <div className="text-xs text-gray-400 mt-0.5">Response Time</div>
-                </div>
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 rounded-xl shadow-glow-md p-3 animate-float border border-primary-500/30 bg-gray-900/90 backdrop-blur-sm">
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-5 h-5 text-green-400" />
-                  <span className="text-sm font-semibold text-white">Live & Active</span>
+                <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 text-center">
+                  <div className="text-2xl font-bold text-accent-400">&lt;30s</div>
+                  <div className="text-xs text-gray-400 mt-1">Response Time</div>
                 </div>
               </div>
             </div>
@@ -221,12 +202,12 @@ export default function Home() {
               <div className="flex items-start justify-between mb-3">
                 <div className="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform border border-indigo-500/30">
                   <BarChart3 className="w-6 h-6 text-indigo-400" />
-                </div>
+                  </div>
                 <div className="text-right">
                   <div className="text-2xl font-bold text-green-400">87%</div>
                   <div className="text-xs text-gray-500">Conversion</div>
                 </div>
-              </div>
+                    </div>
               <h3 className="text-xl font-bold text-white mb-2">Analytics & Insights</h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-3">
                 Track every call, measure conversion rates, and optimize your sales process.
@@ -235,11 +216,11 @@ export default function Home() {
                 <div className="text-center">
                   <div className="text-lg font-bold text-green-400 mb-0.5">87%</div>
                   <div className="text-xs text-gray-400">Conversion</div>
-                </div>
+                    </div>
                 <div className="text-center border-x border-gray-700/50">
                   <div className="text-lg font-bold text-primary-400 mb-0.5">3:42</div>
                   <div className="text-xs text-gray-400">Duration</div>
-                </div>
+                    </div>
                 <div className="text-center">
                   <div className="text-lg font-bold text-accent-400 mb-0.5">247</div>
                   <div className="text-xs text-gray-400">Bookings</div>
@@ -492,7 +473,7 @@ export default function Home() {
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-4">
-            {/* Testimonial 1 */}
+            {/* Testimonial 1 - Krishna */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700 hover:border-primary-500/50 transition-all duration-500 hover:shadow-orweza group">
               {/* Stars */}
               <div className="flex items-center space-x-1 mb-3">
@@ -503,22 +484,22 @@ export default function Home() {
 
               {/* Quote */}
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                "We stopped missing customer calls completely. The AI books jobs before I even check my phone."
+                "Orwexa books more cleaning jobs than we ever managed on our own. It answers instantly, follows up every lead, and keeps our schedule full."
               </p>
 
               {/* Author */}
               <div className="flex items-center space-x-3 pt-3 border-t border-gray-700">
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md">
-                  M
+                  K
                 </div>
                 <div>
-                  <div className="text-white font-bold text-base">Marcus</div>
-                  <div className="text-xs text-gray-400">Electrician</div>
+                  <div className="text-white font-bold text-base">Krishna</div>
+                  <div className="text-xs text-gray-400">Bloody Good Cleaners</div>
                 </div>
               </div>
             </div>
 
-            {/* Testimonial 2 - Featured */}
+            {/* Testimonial 2 - Susan (Featured) */}
             <div className="bg-gradient-to-br from-primary-900/20 to-gray-900 rounded-xl p-5 border-2 border-primary-500/50 shadow-orweza group relative overflow-hidden">
               {/* Featured Badge */}
               <div className="absolute top-3 right-3 bg-primary-500/20 border border-primary-500/30 rounded-full px-2 py-0.5">
@@ -534,22 +515,22 @@ export default function Home() {
 
               {/* Quote */}
               <p className="text-gray-200 text-sm mb-4 leading-relaxed font-medium">
-                "Our AI receptionist now handles 80% of our real estate inquiries. Game changer."
+                "Orwexa feels more reliable than most humans I've hired. It never misses a call and never takes a day off."
               </p>
 
               {/* Author */}
               <div className="flex items-center space-x-3 pt-3 border-t border-gray-700">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md">
-                  T
+                  S
                 </div>
                 <div>
-                  <div className="text-white font-bold text-base">Tahlia</div>
-                  <div className="text-xs text-gray-400">Property Agent</div>
+                  <div className="text-white font-bold text-base">Susan</div>
+                  <div className="text-xs text-gray-400">Arkoray Digital</div>
                 </div>
               </div>
             </div>
 
-            {/* Testimonial 3 */}
+            {/* Testimonial 3 - Marcus */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-5 border border-gray-700 hover:border-accent-500/50 transition-all duration-500 hover:shadow-orweza group">
               {/* Stars */}
               <div className="flex items-center space-x-1 mb-3">
@@ -560,17 +541,17 @@ export default function Home() {
 
               {/* Quote */}
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                "Orwexa feels more reliable than most humans I've hired. Never takes a day off."
+                "We've stopped missing customer calls completely. Orwexa books jobs before I even get a chance to check my phone."
               </p>
 
               {/* Author */}
               <div className="flex items-center space-x-3 pt-3 border-t border-gray-700">
                 <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md">
-                  R
+                  M
                 </div>
                 <div>
-                  <div className="text-white font-bold text-base">Ravi</div>
-                  <div className="text-xs text-gray-400">Marketing Agency</div>
+                  <div className="text-white font-bold text-base">Marcus</div>
+                  <div className="text-xs text-gray-400">Electrician</div>
                 </div>
               </div>
             </div>
@@ -580,7 +561,7 @@ export default function Home() {
           <div className="mt-6 text-center">
             <div className="inline-flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-4 py-2">
               <Users className="w-4 h-4 text-primary-400" />
-              <span className="text-gray-300 text-xs">Join 500+ businesses growing with Orwexa</span>
+              <span className="text-gray-300 text-xs">Join 10+ businesses growing with Orwexa</span>
             </div>
           </div>
         </div>
@@ -615,7 +596,7 @@ export default function Home() {
 
               {/* Subheading */}
               <p className="text-base md:text-lg text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
-                Join 500+ businesses using AI to answer every call, follow up with every lead, and book more appointments on autopilot.
+                Join 10+ businesses using AI to answer every call, follow up with every lead, and book more appointments on autopilot.
               </p>
 
               {/* CTA Buttons */}
