@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Check, HelpCircle, Sparkles } from "lucide-react";
 import PricingCard from "@/components/PricingCard";
 
 export default function PricingPage() {
+  const [selectedPlan, setSelectedPlan] = useState<number | null>(null);
 
   const pricingPlans = [
     {
@@ -188,7 +190,12 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-4">
             {pricingPlans.map((plan, index) => (
-              <PricingCard key={index} {...plan} />
+              <PricingCard 
+                key={index} 
+                {...plan} 
+                selected={selectedPlan === index}
+                onClick={() => setSelectedPlan(index)}
+              />
             ))}
           </div>
         </div>

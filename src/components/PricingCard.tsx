@@ -12,6 +12,8 @@ interface PricingCardProps {
   popular?: boolean;
   cta: string;
   ctaLink: string;
+  selected?: boolean;
+  onClick?: () => void;
 }
 
 export default function PricingCard({
@@ -25,15 +27,42 @@ export default function PricingCard({
   popular = false,
   cta,
   ctaLink,
+  selected = false,
+  onClick,
 }: PricingCardProps) {
   return (
     <div
-      className={`relative p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ${
+      onClick={onClick}
+      className={`relative p-5 rounded-xl shadow-lg transition-all duration-300 cursor-pointer group ${
         popular ? 'scale-105' : ''
+      } ${
+        selected 
+          ? 'ring-2 ring-primary-500 ring-offset-2 ring-offset-gray-900 bg-primary-500/10 border-2 border-primary-500/50' 
+          : 'hover:bg-primary-500/10 hover:border-2 hover:border-primary-500/50 hover:ring-2 hover:ring-primary-500/30 hover:ring-offset-2 hover:ring-offset-gray-900'
+      } ${
+        selected 
+          ? '' 
+          : popular 
+            ? 'border-2 border-white/15' 
+            : 'border border-white/10'
       }`}
       style={{
-        backgroundColor: '#524f4f',
-        border: popular ? '2px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(255, 255, 255, 0.1)'
+        backgroundColor: selected 
+          ? 'rgba(59, 126, 246, 0.1)' 
+          : 'rgba(31, 41, 55, 0.8)', // gray-800 with transparency
+        boxShadow: selected 
+          ? '0 0 30px rgba(59, 126, 246, 0.3), 0 10px 40px rgba(37, 99, 235, 0.2)' 
+          : undefined
+      }}
+      onMouseEnter={(e) => {
+        if (!selected) {
+          e.currentTarget.style.boxShadow = '0 0 30px rgba(59, 126, 246, 0.3), 0 10px 40px rgba(37, 99, 235, 0.2)';
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (!selected) {
+          e.currentTarget.style.boxShadow = '';
+        }
       }}
     >
       {/* Popular Badge */}
@@ -47,17 +76,17 @@ export default function PricingCard({
 
       {/* Header */}
       <div className="text-center mb-4">
-        <h3 className="text-xl font-bold text-white mb-1.5">{title}</h3>
+        <h3 className={`text-xl font-bold mb-1.5 transition-colors duration-300 ${selected ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>{title}</h3>
         <p className="text-gray-400 text-xs mb-3">{description}</p>
         <div className="flex items-baseline justify-center mb-2">
-          <span className="text-3xl font-bold text-white">{price}</span>
+          <span className={`text-3xl font-bold transition-colors duration-300 ${selected ? 'text-primary-300' : 'text-white group-hover:text-primary-300'}`}>{price}</span>
           {price !== "Custom" && period && (
             <span className="text-gray-400 ml-1.5 text-sm">{period}</span>
           )}
         </div>
         {callCost && (
           <div className="space-y-0.5">
-            <div className="text-primary-400 font-semibold text-sm">{callCost}</div>
+            <div className={`font-semibold text-sm transition-colors duration-300 ${selected ? 'text-primary-300' : 'text-primary-400 group-hover:text-primary-300'}`}>{callCost}</div>
             {billing && (
               <div className="text-xs text-gray-500">{billing}</div>
             )}
@@ -86,7 +115,7 @@ export default function PricingCard({
               ? 'bg-gradient-primary hover:shadow-lg hover:scale-105'
               : 'hover:bg-opacity-80'
           }`}
-          style={popular ? {color: '#ffffff'} : {backgroundColor: '#625f5f', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+          style={popular ? {color: '#ffffff'} : {backgroundColor: 'rgba(31, 41, 55, 0.9)', color: '#ffffff', border: '1px solid rgba(59, 126, 246, 0.2)'}}
         >
           {cta}
         </a>
@@ -98,7 +127,7 @@ export default function PricingCard({
               ? 'bg-gradient-primary hover:shadow-lg hover:scale-105'
               : 'hover:bg-opacity-80'
           }`}
-          style={popular ? {color: '#ffffff'} : {backgroundColor: '#625f5f', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.1)'}}
+          style={popular ? {color: '#ffffff'} : {backgroundColor: 'rgba(31, 41, 55, 0.9)', color: '#ffffff', border: '1px solid rgba(59, 126, 246, 0.2)'}}
         >
           {cta}
         </Link>
