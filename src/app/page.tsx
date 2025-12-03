@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   PhoneCall,
@@ -37,21 +38,15 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left Column - Hero Content */}
             <div className="space-y-4 animate-fade-in-up">
-              {/* Badge */}
-              <div className="inline-flex items-center space-x-2 bg-primary-500/10 border border-primary-500/20 rounded-full px-4 py-2">
-                <Sparkles className="w-4 h-4 text-primary-400" />
-                <span className="text-sm font-medium text-primary-300">AI-Powered Voice Agent</span>
-              </div>
-
               {/* Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Never miss a
-                <span className="block text-gradient mt-1">booking again.</span>
+                You work with your hands.
+                <span className="block text-gradient mt-1">Let Orwexa work the phone.</span>
               </h1>
 
               {/* Subheadline */}
               <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
-                Your AI receptionist answers calls 24/7, follows up with leads, and books appointments automatically.
+                Join 10+ businesses using Orwexa to answer, qualify, and book customers automatically — day, night, weekends.
               </p>
 
               {/* CTA Buttons */}
@@ -60,17 +55,21 @@ export default function Home() {
                   href="/pricing"
                   className="group px-8 py-4 bg-gradient-primary text-white rounded-2xl font-bold text-base hover:shadow-glow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3"
                 >
-                  <span>Get Started Free</span>
+                  <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <a
-                  href="https://app.orwexa.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm text-white rounded-2xl font-bold text-base hover:bg-gray-700/50 border-2 border-gray-600/50 transition-all duration-300 flex items-center justify-center"
-                >
-                  Login
-                </a>
+              </div>
+
+              {/* Trial Info */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <div className="flex items-center space-x-2 text-sm text-gray-400">
+                  <CheckCircle2 className="w-4 h-4 text-green-400" />
+                  <span>7-Day Free Trial</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-400">
+                  <CheckCircle2 className="w-4 h-4 text-green-400" />
+                  <span>$10 Free Credit</span>
+                </div>
               </div>
 
             </div>
@@ -93,162 +92,141 @@ export default function Home() {
                 </div>
               </div>
             </div>
+                </div>
+              </div>
+      </section>
+
+      {/* PARTNER LOGOS SECTION */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 w-full" style={{backgroundColor: 'rgb(17 24 39)'}}>
+        <div className="w-full">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* OpenAI */}
+            <div className="h-10 md:h-12 lg:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+              <Image
+                src="/OPENAI.png"
+                alt="OpenAI"
+                width={140}
+                height={56}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            
+            {/* Twilio */}
+            <div className="h-10 md:h-12 lg:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+              <Image
+                src="/TWILIO.png"
+                alt="Twilio"
+                width={140}
+                height={56}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            
+            {/* Retell AI */}
+            <div className="h-10 md:h-12 lg:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+              <Image
+                src="/RETELLAI.svg"
+                alt="Retell AI"
+                width={140}
+                height={56}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            
+            {/* Zapier */}
+            <div className="h-10 md:h-12 lg:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+              <Image
+                src="/ZAPIER.png"
+                alt="Zapier"
+                width={140}
+                height={56}
+                className="h-full w-auto object-contain"
+              />
+            </div>
+            
+            {/* Google Calendar */}
+            <div className="h-10 md:h-12 lg:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
+              <Image
+                src="/GOOGLECALENDER.png"
+                alt="Google Calendar"
+                width={140}
+                height={56}
+                className="h-full w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FEATURES SECTION - Compact Modern Design */}
+      {/* TWO AI ENGINES SECTION */}
       <section className="py-8 px-4 sm:px-6 lg:px-8" style={{backgroundColor: 'rgb(17 24 39)'}}>
         <div className="max-w-7xl mx-auto">
-          {/* Compact Header */}
-          <div className="text-center mb-6">
+          {/* Section Header */}
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Everything you need to
-              <span className="block text-gradient mt-1">close more deals</span>
+              Two AI Engines. One outcome.
+              <span className="block text-gradient mt-1">More Booked Work.</span>
             </h2>
-            <p className="text-sm text-gray-400 max-w-2xl mx-auto">
-              Your AI agent handles the entire customer journey from first call to booked appointment
-            </p>
           </div>
 
-          {/* Dense Grid Layout - No Wasted Space */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-            {/* Feature 1 - Inbound Reception */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-primary-500/10 to-gray-800 rounded-xl p-5 border border-primary-500/20 hover:border-primary-500/50 transition-all duration-300 hover:shadow-orweza group">
-              <div className="flex items-start justify-between mb-3">
-                <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform border border-primary-500/30">
-                  <PhoneIncoming className="w-6 h-6 text-primary-400" />
+          {/* Two AI Engines Grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 1. Inbound AI Reception */}
+            <div className="bg-gradient-to-br from-primary-500/10 to-gray-800 rounded-xl p-6 border border-primary-500/20 hover:border-primary-500/50 transition-all duration-300 hover:shadow-orweza group">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-14 h-14 bg-primary-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform border border-primary-500/30">
+                  <PhoneIncoming className="w-7 h-7 text-primary-400" />
                 </div>
-                <div className="bg-green-500/10 border border-green-500/20 rounded-full px-2 py-0.5">
-                  <span className="text-xs font-semibold text-green-400">Popular</span>
+                <div className="bg-primary-500/10 border border-primary-500/20 rounded-full px-3 py-1">
+                  <span className="text-xs font-semibold text-primary-300">1</span>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">24/7 Inbound Reception</h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                Never miss another call. Your AI receptionist answers instantly, qualifies leads, and books appointments.
+              <h3 className="text-2xl font-bold text-white mb-3">Inbound AI Reception</h3>
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
+                AI answers every call instantly, qualifies the caller, and books a slot in your calendar.
               </p>
-              <div className="grid grid-cols-2 gap-2">
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Instant pickup</span>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
+                  <span className="text-gray-300 text-sm">Instant pickup</span>
                 </div>
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Lead qualification</span>
+                <div className="flex items-center space-x-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
+                  <span className="text-gray-300 text-sm">Lead qualification</span>
                 </div>
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Smart booking</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Call recording</span>
+                <div className="flex items-center space-x-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-400"></div>
+                  <span className="text-gray-300 text-sm">Real-time booking</span>
                 </div>
               </div>
             </div>
 
-            {/* Feature 2 - Outbound Follow-Up */}
-            <div className="bg-gradient-to-br from-accent-500/10 to-gray-800 rounded-xl p-5 border border-accent-500/20 hover:border-accent-500/50 transition-all duration-300 hover:shadow-glow-md group">
-              <div className="w-12 h-12 bg-accent-500/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform border border-accent-500/30">
-                <PhoneOutgoing className="w-6 h-6 text-accent-400" />
+            {/* 2. Outbound AI Follow-Up */}
+            <div className="bg-gradient-to-br from-accent-500/10 to-gray-800 rounded-xl p-6 border border-accent-500/20 hover:border-accent-500/50 transition-all duration-300 hover:shadow-glow-md group">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-14 h-14 bg-accent-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform border border-accent-500/30">
+                <PhoneOutgoing className="w-7 h-7 text-accent-400" />
+                </div>
+                <div className="bg-accent-500/10 border border-accent-500/20 rounded-full px-3 py-1">
+                  <span className="text-xs font-semibold text-accent-300">2</span>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Outbound Follow-Up</h3>
-              <p className="text-gray-300 text-xs leading-relaxed mb-3">
-                Automatically call back missed leads and re-engage dormant customers.
+              <h3 className="text-2xl font-bold text-white mb-3">Outbound AI Follow-Up</h3>
+              <p className="text-gray-300 text-base leading-relaxed mb-4">
+                AI calls back missed calls and cold leads so you stop leaking revenue.
               </p>
-              <div className="space-y-1.5">
-                <div className="flex items-center space-x-1.5">
+              <div className="space-y-2">
+                <div className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent-400"></div>
-                  <span className="text-gray-300 text-xs">Auto callbacks</span>
+                  <span className="text-gray-300 text-sm">Auto callbacks</span>
                 </div>
-                <div className="flex items-center space-x-1.5">
+                <div className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent-400"></div>
-                  <span className="text-gray-300 text-xs">Quote follow-ups</span>
+                  <span className="text-gray-300 text-sm">Quote follow-ups</span>
                 </div>
-                <div className="flex items-center space-x-1.5">
+                <div className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent-400"></div>
-                  <span className="text-gray-300 text-xs">Re-activation</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 3 - Smart Scheduling */}
-            <div className="bg-gradient-to-br from-blue-500/10 to-gray-800 rounded-xl p-5 border border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-glow-md group">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform border border-blue-500/30">
-                <Calendar className="w-6 h-6 text-blue-400" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Smart Scheduling</h3>
-              <p className="text-gray-300 text-xs leading-relaxed mb-3">
-                Sync with your calendar and let AI handle all booking logistics.
-              </p>
-              <div className="space-y-1.5">
-                <div className="flex items-center space-x-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                  <span className="text-gray-300 text-xs">Calendar sync</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                  <span className="text-gray-300 text-xs">Auto confirmations</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                  <span className="text-gray-300 text-xs">Smart reminders</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 4 - Analytics & Insights */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-indigo-500/10 to-gray-800 rounded-xl p-5 border border-indigo-500/20 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-orweza group">
-              <div className="flex items-start justify-between mb-3">
-                <div className="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform border border-indigo-500/30">
-                  <BarChart3 className="w-6 h-6 text-indigo-400" />
-                  </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-green-400">87%</div>
-                  <div className="text-xs text-gray-500">Conversion</div>
-                </div>
-                    </div>
-              <h3 className="text-xl font-bold text-white mb-2">Analytics & Insights</h3>
-              <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                Track every call, measure conversion rates, and optimize your sales process.
-              </p>
-              <div className="grid grid-cols-3 gap-2 bg-gray-900/50 rounded-lg p-3 border border-gray-700/50">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-green-400 mb-0.5">87%</div>
-                  <div className="text-xs text-gray-400">Conversion</div>
-                    </div>
-                <div className="text-center border-x border-gray-700/50">
-                  <div className="text-lg font-bold text-primary-400 mb-0.5">3:42</div>
-                  <div className="text-xs text-gray-400">Duration</div>
-                    </div>
-                <div className="text-center">
-                  <div className="text-lg font-bold text-accent-400 mb-0.5">247</div>
-                  <div className="text-xs text-gray-400">Bookings</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Feature 5 - Easy Setup */}
-            <div className="bg-gradient-to-br from-yellow-500/10 to-gray-800 rounded-xl p-5 border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-glow-md group">
-              <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform border border-yellow-500/30">
-                <Zap className="w-6 h-6 text-yellow-400" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Easy Setup</h3>
-              <p className="text-gray-300 text-xs leading-relaxed mb-3">
-                Go live in under 15 minutes. No coding required.
-              </p>
-              <div className="space-y-1.5">
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Quick config</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Templates</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-green-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-xs">Live support</span>
+                  <span className="text-gray-300 text-sm">Lead reactivation</span>
                 </div>
               </div>
             </div>
@@ -622,19 +600,11 @@ export default function Home() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-4 border-t border-gray-700">
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">14 days Free trial</span>
+                  <span className="text-sm">7-Day Free Trial</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-400">
                   <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">Free $10 credit</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">Setup in 15 minutes</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <CheckCircle2 className="w-4 h-4 text-green-400" />
-                  <span className="text-sm">Cancel anytime</span>
+                  <span className="text-sm">$10 Free Credit</span>
                 </div>
               </div>
             </div>
